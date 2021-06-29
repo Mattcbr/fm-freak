@@ -72,4 +72,17 @@ class TopChartViewController: UICollectionViewController, TopChartView {
         return cell
     }
     
+    // MARK: Infinite Scroll
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollViewHeight = scrollView.frame.size.height
+        let scrollContentSizeHeight = scrollView.contentSize.height
+        let scrollOffset = scrollView.contentOffset.y
+        
+        let diff = scrollContentSizeHeight - scrollOffset - scrollViewHeight    //This detects if the scroll is near the botom of the scroll view
+        
+        if (diff<30) {    //If the scroll is near the bottom make a new request.
+            presenter?.requestMoreAlbums()
+        }
+    }
+    
 }

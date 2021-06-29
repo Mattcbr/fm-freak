@@ -17,8 +17,8 @@ class NetworkManager {
     
     // MARK: Requests
     
-    func makeHipHopRequest(completion: @escaping (Swift.Result<AlbumsRequestInfo, HttpRequestError>) -> Void) {
-        getRequestForUrl(pathBuilder.hipHopURL) { result in
+    func makeHipHopRequest(forPage page: Int, completion: @escaping (Swift.Result<AlbumsRequestInfo, HttpRequestError>) -> Void) {
+        getRequestForUrl(pathBuilder.getHipHopURL(forPage: page)) { result in
             completion(result)
         }
     }

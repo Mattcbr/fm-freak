@@ -17,8 +17,8 @@ class PathBuilder {
     
     // MARK: API Paths
     
-    var hipHopURL: String {
-        let parameters = "?method=tag.gettopalbums&tag=hiphop&api_key=\(apiKey)&page=1"
+    func getHipHopURL(forPage page: Int) -> String {
+        let parameters = "?method=tag.gettopalbums&tag=hiphop&api_key=\(apiKey)&page=\(page)"
         return makeFullUrl(withParameters: parameters)
     }
     

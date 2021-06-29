@@ -22,7 +22,16 @@ class TopChartCollectionViewCell: UICollectionViewCell {
         bottomLabel.textColor = .white
         bottomLabel.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         
+        if let placeholderImage = UIImage(named: "albumCoverDefault") {
+            albumCoverImageView.image = placeholderImage
+        }
+        
+        // I thought about using this, but was not really sure about it in therms of architecture
+        /*if let albumCoverAddress = album.image?.last?.text, let albumURL = URL(string: albumCoverAddress) {
+            albumCoverImageView.af_setImage(withURL: albumURL, placeholderImage: UIImage(named: "albumCoverDefault"))
+        }*/
         activityIndicator.startAnimating()
+        contentView.bringSubviewToFront(activityIndicator)
     }
     
     func setupCover(image: UIImage) {

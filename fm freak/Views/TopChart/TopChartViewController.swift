@@ -65,7 +65,7 @@ class TopChartViewController: UICollectionViewController, TopChartView {
             let albumToSetup = albunsArray[indexPath.row]
             cell.setupCell(forAlbum: albumToSetup)
             
-            if let imageForAlbum = imagesDictionary[albumToSetup.name!] {
+            if let albumName = albumToSetup.name, let imageForAlbum = imagesDictionary[albumName] {
                 cell.setupCover(image: imageForAlbum)
             }
         }

@@ -28,6 +28,7 @@
 		2FABD4EE268A5EBE0075B70C /* fm_freakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4ED268A5EBE0075B70C /* fm_freakUITests.swift */; };
 		2FABD503268A5FD60075B70C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD502268A5FD60075B70C /* NetworkManager.swift */; };
 		2FB60041268B50A3003F473D /* AlbumImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB60040268B50A3003F473D /* AlbumImage.swift */; };
+		2FB60063268B8742003F473D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB60062268B8741003F473D /* Utils.swift */; };
 		5F4674C54B94F6D646A7F789 /* Pods_fm_freak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A07031307A17DF42CE414D /* Pods_fm_freak.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		2FABD4EF268A5EBE0075B70C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FABD502268A5FD60075B70C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2FB60040268B50A3003F473D /* AlbumImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImage.swift; sourceTree = "<group>"; };
+		2FB60062268B8741003F473D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5F381030FD6D9B2AE9B7C8BE /* Pods-fm freak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fm freak.release.xcconfig"; path = "Target Support Files/Pods-fm freak/Pods-fm freak.release.xcconfig"; sourceTree = "<group>"; };
 		62026E2E62491673FA8F1D83 /* Pods-fm freak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fm freak.debug.xcconfig"; path = "Target Support Files/Pods-fm freak/Pods-fm freak.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 				2F7F48B1268B291C007E39E8 /* BasePresenter.swift */,
 				2F7F48BF268B2A06007E39E8 /* BaseView.swift */,
 				2F596EA2268B2F9500C99D1D /* PathBuilder.swift */,
+				2FB60062268B8741003F473D /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				2F7F48C0268B2A06007E39E8 /* BaseView.swift in Sources */,
 				2F7F4877268B1BDE007E39E8 /* Album.swift in Sources */,
 				2FABD4CC268A5EBA0075B70C /* AppDelegate.swift in Sources */,
+				2FB60063268B8742003F473D /* Utils.swift in Sources */,
 				2F7F487C268B1CCE007E39E8 /* Artist.swift in Sources */,
 				2FABD4CE268A5EBA0075B70C /* SceneDelegate.swift in Sources */,
 				2F7F48AC268B28DF007E39E8 /* TopChartPresenter.swift in Sources */,

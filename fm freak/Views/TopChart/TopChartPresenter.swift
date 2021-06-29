@@ -55,4 +55,10 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         }
     }
     
+    // MARK: App Review
+    
+    func shouldShowAppReview() -> Bool {
+        let appClosingCounter = UserDefaults.standard.integer(forKey: Utils().appClosingKey)
+        return appClosingCounter >= 9
+    }
 }

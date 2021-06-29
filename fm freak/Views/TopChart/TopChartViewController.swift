@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class TopChartViewController: UICollectionViewController, TopChartView {
     
@@ -29,6 +30,12 @@ class TopChartViewController: UICollectionViewController, TopChartView {
         
         let albumCell = UINib.init(nibName: "TopChartCollectionViewCell", bundle: nil)
         self.collectionView.register(albumCell, forCellWithReuseIdentifier:reuseIdentifier)
+        
+        if presenter?.shouldShowAppReview() == true {
+            if let foregroundScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: foregroundScene)
+            }
+        }
     }
     
     // MARK: TopChartView Protocol Functions
@@ -73,6 +80,7 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     }
     
     // MARK: Infinite Scroll
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollViewHeight = scrollView.frame.size.height
         let scrollContentSizeHeight = scrollView.contentSize.height

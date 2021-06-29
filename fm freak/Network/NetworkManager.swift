@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 
 class NetworkManager {
     
@@ -46,5 +47,15 @@ class NetworkManager {
     enum HttpRequestError: Error {
         case unavailable
         case decoding
+    }
+    
+    func requestImage(forAlbum album: Album, completion: @escaping (_ imageTuple: (String, UIImage)) -> Void) {
+        if let addressToRequest = album.image?.last?.text {
+            Alamofire.request(addressToRequest).responseImage { response in
+                if let image = response.result.value, let albumName = album.name {
+                    completion((albumName, image))
+                }
+            }
+        }
     }
 }

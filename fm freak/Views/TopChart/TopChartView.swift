@@ -5,8 +5,9 @@
 //  Created by Matheus Queiroz on 6/29/21.
 //
 
-import Foundation
+import UIKit
 
 protocol TopChartView: BaseView {
     func addNewAlbunsToArray(newAlbuns: [Album])
+    func addNewImagesToDictionary(newImages: [String: UIImage])
 }

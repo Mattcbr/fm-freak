@@ -5,9 +5,11 @@
 //  Created by Matheus Queiroz on 6/29/21.
 //
 
+import UIKit
 import Foundation
 
 class Album: Codable {
     let name: String?
     let artist: Artist?
+    let image: [AlbumImage]?
 }

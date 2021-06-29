@@ -15,6 +15,7 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     private var presenter: TopChartPresenter<TopChartViewController>?
     
     private var albunsArray = [Album]()
+    private var imagesDictionary = [String: UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,21 @@ class TopChartViewController: UICollectionViewController, TopChartView {
         }
         
         presenter?.requestAlbuns()
+        
+        let albumCell = UINib.init(nibName: "TopChartCollectionViewCell", bundle: nil)
+        self.collectionView.register(albumCell, forCellWithReuseIdentifier:reuseIdentifier)
     }
     
     // MARK: TopChartView Protocol Functions
     func addNewAlbunsToArray(newAlbuns: [Album]) {
         albunsArray.append(contentsOf: newAlbuns)
+        collectionView.reloadData()
+    }
+    
+    func addNewImagesToDictionary(newImages: [String : UIImage]) {
+        newImages.forEach({ (key, value) in
+            imagesDictionary[key] = value
+        })
         collectionView.reloadData()
     }
     
@@ -47,10 +58,17 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? UICollectionViewCell else {
-            fatalError("Not a details cell")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? TopChartCollectionViewCell else {
+            fatalError("Not a Top Chart cell")
         }
-        cell.backgroundColor = .red
+        if albunsArray.count > indexPath.row {
+            let albumToSetup = albunsArray[indexPath.row]
+            cell.setupCell(forAlbum: albumToSetup)
+            
+            if let imageForAlbum = imagesDictionary[albumToSetup.name!] {
+                cell.setupCover(image: imageForAlbum)
+            }
+        }
         return cell
     }
     

@@ -3,19 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F596EA3268B2F9500C99D1D /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F596EA2268B2F9500C99D1D /* PathBuilder.swift */; };
+		2F7F485E268B1355007E39E8 /* TopChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F485D268B1355007E39E8 /* TopChartView.swift */; };
+		2F7F4863268B1373007E39E8 /* TopChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F4862268B1373007E39E8 /* TopChartViewController.swift */; };
+		2F7F4877268B1BDE007E39E8 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F4876268B1BDE007E39E8 /* Album.swift */; };
+		2F7F487C268B1CCE007E39E8 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F487B268B1CCE007E39E8 /* Artist.swift */; };
+		2F7F4899268B223E007E39E8 /* AlbumsRequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F4898268B223E007E39E8 /* AlbumsRequestInfo.swift */; };
+		2F7F48A4268B25A7007E39E8 /* AlbumsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F48A3268B25A7007E39E8 /* AlbumsArray.swift */; };
+		2F7F48AC268B28DF007E39E8 /* TopChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F48AB268B28DF007E39E8 /* TopChartPresenter.swift */; };
+		2F7F48B2268B291C007E39E8 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F48B1268B291C007E39E8 /* BasePresenter.swift */; };
+		2F7F48C0268B2A06007E39E8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F48BF268B2A06007E39E8 /* BaseView.swift */; };
 		2FABD4CC268A5EBA0075B70C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4CB268A5EBA0075B70C /* AppDelegate.swift */; };
 		2FABD4CE268A5EBA0075B70C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4CD268A5EBA0075B70C /* SceneDelegate.swift */; };
-		2FABD4D0268A5EBA0075B70C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4CF268A5EBA0075B70C /* ViewController.swift */; };
 		2FABD4D3268A5EBA0075B70C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FABD4D1268A5EBA0075B70C /* Main.storyboard */; };
 		2FABD4D5268A5EBE0075B70C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FABD4D4268A5EBE0075B70C /* Assets.xcassets */; };
 		2FABD4D8268A5EBE0075B70C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FABD4D6268A5EBE0075B70C /* LaunchScreen.storyboard */; };
 		2FABD4E3268A5EBE0075B70C /* fm_freakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4E2268A5EBE0075B70C /* fm_freakTests.swift */; };
 		2FABD4EE268A5EBE0075B70C /* fm_freakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4ED268A5EBE0075B70C /* fm_freakUITests.swift */; };
-		2FABD503268A5FD60075B70C /* networkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD502268A5FD60075B70C /* networkManager.swift */; };
+		2FABD503268A5FD60075B70C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD502268A5FD60075B70C /* NetworkManager.swift */; };
 		5F4674C54B94F6D646A7F789 /* Pods_fm_freak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A07031307A17DF42CE414D /* Pods_fm_freak.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,10 +47,19 @@
 
 /* Begin PBXFileReference section */
 		14A07031307A17DF42CE414D /* Pods_fm_freak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fm_freak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F596EA2268B2F9500C99D1D /* PathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
+		2F7F485D268B1355007E39E8 /* TopChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartView.swift; sourceTree = "<group>"; };
+		2F7F4862268B1373007E39E8 /* TopChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartViewController.swift; sourceTree = "<group>"; };
+		2F7F4876268B1BDE007E39E8 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		2F7F487B268B1CCE007E39E8 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		2F7F4898268B223E007E39E8 /* AlbumsRequestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRequestInfo.swift; sourceTree = "<group>"; };
+		2F7F48A3268B25A7007E39E8 /* AlbumsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsArray.swift; sourceTree = "<group>"; };
+		2F7F48AB268B28DF007E39E8 /* TopChartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartPresenter.swift; sourceTree = "<group>"; };
+		2F7F48B1268B291C007E39E8 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		2F7F48BF268B2A06007E39E8 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		2FABD4C8268A5EBA0075B70C /* fm freak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fm freak.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FABD4CB268A5EBA0075B70C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FABD4CD268A5EBA0075B70C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2FABD4CF268A5EBA0075B70C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2FABD4D2268A5EBA0075B70C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FABD4D4268A5EBE0075B70C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FABD4D7268A5EBE0075B70C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,7 +70,7 @@
 		2FABD4E9268A5EBE0075B70C /* fm freakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fm freakUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FABD4ED268A5EBE0075B70C /* fm_freakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fm_freakUITests.swift; sourceTree = "<group>"; };
 		2FABD4EF268A5EBE0075B70C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2FABD502268A5FD60075B70C /* networkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkManager.swift; sourceTree = "<group>"; };
+		2FABD502268A5FD60075B70C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5F381030FD6D9B2AE9B7C8BE /* Pods-fm freak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fm freak.release.xcconfig"; path = "Target Support Files/Pods-fm freak/Pods-fm freak.release.xcconfig"; sourceTree = "<group>"; };
 		62026E2E62491673FA8F1D83 /* Pods-fm freak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fm freak.debug.xcconfig"; path = "Target Support Files/Pods-fm freak/Pods-fm freak.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +101,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F7F485B268B131C007E39E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F485C268B1324007E39E8 /* topChart */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2F7F485C268B1324007E39E8 /* topChart */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F4862268B1373007E39E8 /* TopChartViewController.swift */,
+				2F7F485D268B1355007E39E8 /* TopChartView.swift */,
+				2F7F48AB268B28DF007E39E8 /* TopChartPresenter.swift */,
+			);
+			path = topChart;
+			sourceTree = "<group>";
+		};
+		2F7F4875268B1BCA007E39E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F4876268B1BDE007E39E8 /* Album.swift */,
+				2F7F487B268B1CCE007E39E8 /* Artist.swift */,
+				2F7F4898268B223E007E39E8 /* AlbumsRequestInfo.swift */,
+				2F7F48A3268B25A7007E39E8 /* AlbumsArray.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2F7F48B0268B290B007E39E8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F48B1268B291C007E39E8 /* BasePresenter.swift */,
+				2F7F48BF268B2A06007E39E8 /* BaseView.swift */,
+				2F596EA2268B2F9500C99D1D /* PathBuilder.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2FABD4BF268A5EBA0075B70C = {
 			isa = PBXGroup;
 			children = (
@@ -108,10 +165,12 @@
 		2FABD4CA268A5EBA0075B70C /* fm freak */ = {
 			isa = PBXGroup;
 			children = (
-				2FABD501268A5FC00075B70C /* network */,
+				2F7F48B0268B290B007E39E8 /* Utils */,
+				2F7F4875268B1BCA007E39E8 /* Models */,
+				2F7F485B268B131C007E39E8 /* Views */,
+				2FABD501268A5FC00075B70C /* Network */,
 				2FABD4CB268A5EBA0075B70C /* AppDelegate.swift */,
 				2FABD4CD268A5EBA0075B70C /* SceneDelegate.swift */,
-				2FABD4CF268A5EBA0075B70C /* ViewController.swift */,
 				2FABD4D1268A5EBA0075B70C /* Main.storyboard */,
 				2FABD4D4268A5EBE0075B70C /* Assets.xcassets */,
 				2FABD4D6268A5EBE0075B70C /* LaunchScreen.storyboard */,
@@ -138,12 +197,12 @@
 			path = "fm freakUITests";
 			sourceTree = "<group>";
 		};
-		2FABD501268A5FC00075B70C /* network */ = {
+		2FABD501268A5FC00075B70C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2FABD502268A5FD60075B70C /* networkManager.swift */,
+				2FABD502268A5FD60075B70C /* NetworkManager.swift */,
 			);
-			path = network;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		5F1F26821535180FC26D328C /* Frameworks */ = {
@@ -160,7 +219,6 @@
 				62026E2E62491673FA8F1D83 /* Pods-fm freak.debug.xcconfig */,
 				5F381030FD6D9B2AE9B7C8BE /* Pods-fm freak.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -338,10 +396,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FABD503268A5FD60075B70C /* networkManager.swift in Sources */,
-				2FABD4D0268A5EBA0075B70C /* ViewController.swift in Sources */,
+				2F7F485E268B1355007E39E8 /* TopChartView.swift in Sources */,
+				2F7F4863268B1373007E39E8 /* TopChartViewController.swift in Sources */,
+				2F596EA3268B2F9500C99D1D /* PathBuilder.swift in Sources */,
+				2FABD503268A5FD60075B70C /* NetworkManager.swift in Sources */,
+				2F7F48C0268B2A06007E39E8 /* BaseView.swift in Sources */,
+				2F7F4877268B1BDE007E39E8 /* Album.swift in Sources */,
 				2FABD4CC268A5EBA0075B70C /* AppDelegate.swift in Sources */,
+				2F7F487C268B1CCE007E39E8 /* Artist.swift in Sources */,
 				2FABD4CE268A5EBA0075B70C /* SceneDelegate.swift in Sources */,
+				2F7F48AC268B28DF007E39E8 /* TopChartPresenter.swift in Sources */,
+				2F7F48A4268B25A7007E39E8 /* AlbumsArray.swift in Sources */,
+				2F7F4899268B223E007E39E8 /* AlbumsRequestInfo.swift in Sources */,
+				2F7F48B2268B291C007E39E8 /* BasePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

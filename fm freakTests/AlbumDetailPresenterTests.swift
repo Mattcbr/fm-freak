@@ -13,11 +13,12 @@ class AlbumDetailPresenterTests: XCTestCase {
     private var presenter: AlbumDetailPresenter<MockAlbumDetailView>?
     private var view = MockAlbumDetailView()
     private var networkManager: MockNetworkManager?
+    private var databaseManager = DatabaseManager.sharedInstance
     
     override func setUp() {
         
         networkManager = MockNetworkManager()
-        presenter = AlbumDetailPresenter(networkManager: networkManager!)
+        presenter = AlbumDetailPresenter(networkManager: networkManager!, databaseManager: databaseManager)
         presenter?.attachView(view)
     }
 
@@ -78,6 +79,8 @@ private class MockAlbumDetailView: AlbumDetailView {
     
     var showAlbumDetailCalled: Bool = false
     var showErrorCalled: Bool = false
+    var showAddToFavoriteCompleteDialogCalled: Bool = false
+    var showRemoveFromFavoriteCompleteDialogCalled: Bool = false
     
     func showAlbumDetail(forAlbum album: AlbumDetailedInfo) {
         showAlbumDetailCalled = true
@@ -85,5 +88,13 @@ private class MockAlbumDetailView: AlbumDetailView {
     
     func showError(_ error: Error) {
         showErrorCalled = true
+    }
+    
+    func showAddToFavoriteCompleteDialog(wasSuccessful: Bool) {
+        showAddToFavoriteCompleteDialogCalled = true
+    }
+    
+    func showRemoveFromFavoriteCompleteDialog(wasSuccessful: Bool) {
+        showRemoveFromFavoriteCompleteDialogCalled = true
     }
 }

@@ -13,11 +13,12 @@ class TopChartPresenterTests: XCTestCase {
     private var presenter: TopChartPresenter<MockTopChartView>?
     private var view = MockTopChartView()
     private var networkManager: MockNetworkManager?
+    private var databaseManager = DatabaseManager.sharedInstance
     
     override func setUp() {
         
         networkManager = MockNetworkManager()
-        presenter = TopChartPresenter(networkManager: networkManager!)
+        presenter = TopChartPresenter(networkManager: networkManager!, databaseManager: databaseManager, isFavoritesScreen: false)
         presenter?.attachView(view)
     }
 
@@ -31,7 +32,7 @@ class TopChartPresenterTests: XCTestCase {
         networkManager?.expectedResult = Result<Any, NetworkManager.HttpRequestError>.success((Any).self)
         
         //When
-        presenter?.requestAlbuns()
+        presenter?.requestAlbunsFromNetwork()
         
         //Then
         XCTAssertTrue(view.addNewAlbunsToArrayCalled)
@@ -43,7 +44,7 @@ class TopChartPresenterTests: XCTestCase {
         networkManager?.expectedResult = Result<Any, NetworkManager.HttpRequestError>.failure(.decoding)
         
         //When
-        presenter?.requestAlbuns()
+        presenter?.requestAlbunsFromNetwork()
         
         //Then
         XCTAssertTrue(view.showErrorCalled)

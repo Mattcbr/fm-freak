@@ -47,6 +47,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <segue destination="4WC-3X-WJ7" kind="modal" identifier="detailViewSegue" id="ceY-Yh-TtE"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -60,6 +63,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVz-aH-539" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="261" y="-198"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="h7c-oE-YNt">
+            <objects>
+                <viewController id="4WC-3X-WJ7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z8F-60-0BL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJk-lM-c4t">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iR5-4c-IxP" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1792.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="albumCoverDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Xzd-zW-gSJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knm-Jq-TWz">
+                                                <rect key="frame" x="0.0" y="320" width="414" height="1472.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu0-SX-0kr">
+                                                        <rect key="frame" x="16" y="16" width="382" height="1440.5"/>
+                                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo justo, suscipit eu luctus vitae, pretium eget nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec posuere nec nibh vel viverra. Vestibulum mi metus, mollis ac tortor sed, fringilla rutrum nulla. Donec ac enim nec magna fringilla maximus ac et mi. Vivamus dictum sodales metus nec facilisis. Nulla maximus viverra eros sed pellentesque.
+
+Duis sagittis ultricies metus in sollicitudin. Praesent laoreet urna nisi, rhoncus placerat mi commodo pretium. Nunc et libero consectetur, efficitur ante quis, aliquam massa. Proin a diam ultrices, vehicula lectus efficitur, scelerisque est. Etiam tincidunt euismod egestas. Quisque lobortis orci et ante tincidunt fringilla eu fermentum odio. Vivamus vel massa sed ex auctor vestibulum eu a odio. Mauris vitae velit porttitor, egestas neque sed, tincidunt ex. Vestibulum quis posuere arcu, at vehicula magna. Donec vel pellentesque odio, eget hendrerit sapien. Curabitur nec malesuada ipsum. Sed scelerisque elit ac nisl scelerisque, sit amet pharetra metus aliquam.
+
+Pellentesque malesuada leo lorem. Nunc sit amet scelerisque sem. Praesent aliquam metus nec molestie iaculis. Mauris dictum scelerisque massa sit amet ornare. Suspendisse ullamcorper, felis at varius vulputate, arcu mi tempus dui, quis faucibus nulla lorem eget est. Curabitur malesuada porttitor odio eget consectetur. Ut facilisis tristique justo vel fermentum. Duis porttitor purus eu laoreet lacinia. Vivamus vulputate nunc nibh, commodo bibendum felis molestie eu. Aliquam erat volutpat. Donec ut metus vel eros viverra maximus. Aliquam erat volutpat. Vivamus elementum sed purus sit amet ultricies. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla vitae lacinia lectus. Fusce efficitur, ex in efficitur efficitur, justo nunc finibus neque, tempus molestie metus augue vel diam. Ut at massa dignissim odio gravida fringilla. Fusce ac eros blandit, lacinia ante ut, eleifend mi. Maecenas mollis magna nunc, ut placerat nulla vulputate vel. Etiam porttitor, justo vitae efficitur efficitur, diam eros mattis orci, nec luctus neque felis et odio. Donec sagittis ornare diam, ac viverra quam ornare id. Nam tincidunt ante vel nisl consectetur, eget placerat enim gravida. Pellentesque commodo nibh et eros tincidunt fringilla. Fusce pharetra tincidunt ligula, ut varius diam varius vitae.
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam a odio nec libero ultricies tincidunt. Vivamus efficitur porttitor tempus. Integer pretium ex sit amet felis feugiat congue. Aenean vel ligula pellentesque, efficitur enim quis, dictum mauris. Aenean dignissim in justo sed iaculis. Nunc ut ipsum vitae eros malesuada facilisis. Aenean congue a magna molestie ornare.
+
+</mutableString>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="fu0-SX-0kr" secondAttribute="trailing" constant="16" id="MY1-Hk-2Pn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="fu0-SX-0kr" secondAttribute="bottom" constant="16" id="N5X-sf-6OB"/>
+                                                    <constraint firstItem="fu0-SX-0kr" firstAttribute="leading" secondItem="Knm-Jq-TWz" secondAttribute="leading" constant="16" id="xj1-xD-qb9"/>
+                                                    <constraint firstItem="fu0-SX-0kr" firstAttribute="top" secondItem="Knm-Jq-TWz" secondAttribute="top" constant="16" id="xuj-fh-nW3"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Xzd-zW-gSJ" secondAttribute="trailing" id="2jo-45-n8u"/>
+                                            <constraint firstItem="Xzd-zW-gSJ" firstAttribute="bottom" secondItem="Knm-Jq-TWz" secondAttribute="top" id="VU6-YI-Edr"/>
+                                            <constraint firstItem="Knm-Jq-TWz" firstAttribute="top" secondItem="iR5-4c-IxP" secondAttribute="top" constant="320" id="YDA-hE-ECg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Knm-Jq-TWz" secondAttribute="trailing" id="fJQ-7p-bn4"/>
+                                            <constraint firstAttribute="bottom" secondItem="Knm-Jq-TWz" secondAttribute="bottom" id="jED-Wy-f7X"/>
+                                            <constraint firstItem="Knm-Jq-TWz" firstAttribute="leading" secondItem="iR5-4c-IxP" secondAttribute="leading" id="sAR-wj-gBM"/>
+                                            <constraint firstItem="Xzd-zW-gSJ" firstAttribute="leading" secondItem="iR5-4c-IxP" secondAttribute="leading" id="yQQ-9Q-hrF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="iR5-4c-IxP" firstAttribute="width" secondItem="LJk-lM-c4t" secondAttribute="width" id="7Xc-dc-YS6"/>
+                                    <constraint firstAttribute="trailing" secondItem="iR5-4c-IxP" secondAttribute="trailing" id="Kil-km-SwS"/>
+                                    <constraint firstItem="iR5-4c-IxP" firstAttribute="leading" secondItem="LJk-lM-c4t" secondAttribute="leading" id="bN9-yP-7Ah"/>
+                                    <constraint firstItem="iR5-4c-IxP" firstAttribute="top" secondItem="LJk-lM-c4t" secondAttribute="top" id="w8l-PN-I4q"/>
+                                    <constraint firstAttribute="bottom" secondItem="iR5-4c-IxP" secondAttribute="bottom" id="zbN-qS-ycP"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W6I-2g-Ib2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LJk-lM-c4t" firstAttribute="top" secondItem="Z8F-60-0BL" secondAttribute="top" id="NHT-01-OIR"/>
+                            <constraint firstAttribute="bottom" secondItem="LJk-lM-c4t" secondAttribute="bottom" id="QZY-oJ-eci"/>
+                            <constraint firstItem="Xzd-zW-gSJ" firstAttribute="top" secondItem="W6I-2g-Ib2" secondAttribute="top" priority="900" id="dGU-6k-kvD"/>
+                            <constraint firstItem="LJk-lM-c4t" firstAttribute="leading" secondItem="W6I-2g-Ib2" secondAttribute="leading" id="p0g-iw-Q4k"/>
+                            <constraint firstItem="W6I-2g-Ib2" firstAttribute="trailing" secondItem="LJk-lM-c4t" secondAttribute="trailing" id="xDZ-bc-qGy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="69h-iQ-0Oi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqm-mE-rK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="-198"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BNY-mO-7Yz">
@@ -81,11 +168,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="albumCoverDefault" width="856" height="895"/>
         <image name="checkmark.seal" catalog="system" width="128" height="128"/>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

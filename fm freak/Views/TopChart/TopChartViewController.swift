@@ -79,6 +79,10 @@ class TopChartViewController: UICollectionViewController, TopChartView {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailViewSegue", sender: self)
+    }
+    
     // MARK: Infinite Scroll
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

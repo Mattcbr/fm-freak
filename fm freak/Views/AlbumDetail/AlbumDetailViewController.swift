@@ -119,4 +119,36 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func showAddToFavoriteCompleteDialog(wasSuccessful: Bool) {
+        let title = wasSuccessful ? "Album saved" : "Error saving"
+        let message = wasSuccessful ? "This album was added to your favorites" : "We're sorry, but there was an error when trying to add this album to your favorites"
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true) {[weak self] in
+            self?.setupFavoritesButton()
+        }
+    }
+    
+    func showRemoveFromFavoriteCompleteDialog(wasSuccessful: Bool) {
+        let title = wasSuccessful ? "Album removed" : "Error removing"
+        let message = wasSuccessful ? "This album was removed from your favorites" : "We're sorry, but there was an error when trying to remove this album from your favorites"
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true) {[weak self] in
+            self?.setupFavoritesButton()
+        }
+    }
 }

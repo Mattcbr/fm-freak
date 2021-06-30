@@ -55,11 +55,27 @@ class AlbumDetailPresenter<T: AlbumDetailView>: BasePresenter<T> {
     }
     
     private func addAlbumToFavorites(albumToAdd: AlbumDetailedInfo) {
-        databaseManager.addToFavorites(album: albumToAdd)
+        databaseManager.addToFavorites(album: albumToAdd) { [weak self] result in
+            switch result {
+            case .success:
+                self?.baseView?.showAddToFavoriteCompleteDialog(wasSuccessful: true)
+            case .failure(let error):
+                self?.baseView?.showAddToFavoriteCompleteDialog(wasSuccessful: false)
+                print(error.localizedDescription)
+            }
+        }
     }
     
     private func removeAlbumFromFavorites(albumToRemove: AlbumDetailedInfo) {
-        databaseManager.removeFromFavorites(album: albumToRemove)
+        databaseManager.removeFromFavorites(album: albumToRemove) { [weak self] result in
+            switch result {
+            case .success:
+                self?.baseView?.showRemoveFromFavoriteCompleteDialog(wasSuccessful: true)
+            case .failure(let error):
+                self?.baseView?.showRemoveFromFavoriteCompleteDialog(wasSuccessful: false)
+                print(error.localizedDescription)
+            }
+        }
     }
     
     

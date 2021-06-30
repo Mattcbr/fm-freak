@@ -46,20 +46,21 @@ class DatabaseManager {
         }
     }
     
-    func addToFavorites(album: AlbumDetailedInfo) {
+    func addToFavorites(album: AlbumDetailedInfo, _ completion: @escaping (Swift.Result<Bool, Error>) -> Void) {
         let cacheModel = mapper.mapToRealmDetailedInfo(object: album)
         do {
             let realm = try getDatabase()
             try realm.write {
                 realm.add(cacheModel, update: .all)
             }
+            completion(.success(true))
         } catch let error as NSError {
-            print(error.localizedDescription)
+            completion(.failure(error))
         }
         shouldUpdate = true
     }
     
-    func removeFromFavorites(album: AlbumDetailedInfo) {
+    func removeFromFavorites(album: AlbumDetailedInfo, _ completion: @escaping (Swift.Result<Bool, Error>) -> Void) {
         // Missing: Actually handle all the errors, maybe add completion blocks
         let cacheModel = mapper.mapToRealmDetailedInfo(object: album)
         do {
@@ -67,8 +68,9 @@ class DatabaseManager {
             try realm.write {
                 realm.delete(realm.objects(RealmDetailedAlbum.self).filter({$0.name == cacheModel.name}))
             }
+            completion(.success(true))
         } catch let error as NSError {
-            print(error.localizedDescription)
+            completion(.failure(error))
         }
         shouldUpdate = true
     }

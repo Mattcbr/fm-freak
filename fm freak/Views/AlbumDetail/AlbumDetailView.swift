@@ -9,4 +9,6 @@ import Foundation
 
 protocol AlbumDetailView: BaseView {
     func showAlbumDetail(forAlbum album:AlbumDetailedInfo)
+    func showAddToFavoriteCompleteDialog(wasSuccessful: Bool)
+    func showRemoveFromFavoriteCompleteDialog(wasSuccessful: Bool)
 }

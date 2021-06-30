@@ -9,4 +9,8 @@ import Foundation
 
 class AlbumsArray: Codable {
     let album: [Album]?
+    
+    init(album: [Album]) {
+        self.album = album
+    }
 }

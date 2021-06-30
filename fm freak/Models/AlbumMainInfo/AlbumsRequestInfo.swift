@@ -9,4 +9,8 @@ import Foundation
 
 class AlbumsRequestInfo: Codable {
     let albums: AlbumsArray?
+    
+    init(albums: AlbumsArray) {
+        self.albums = albums
+    }
 }

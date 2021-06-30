@@ -24,7 +24,7 @@ class TopChartViewController: UICollectionViewController, TopChartView {
         super.viewDidLoad()
         
         if presenter == nil {
-            presenter = TopChartPresenter()
+            presenter = TopChartPresenter(networkManager: NetworkManager.sharedInstance)
             presenter?.attachView(self)
         }
         

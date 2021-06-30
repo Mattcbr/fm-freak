@@ -10,9 +10,14 @@ import UIKit
 
 class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
     
-    private let networkManager = NetworkManager.sharedInstance
+    let networkManager: NetworkManager
+    
     private var lastRequestedPage = 1
     private var isLoadingData = false
+    
+    init(networkManager: NetworkManager) {
+        self.networkManager = networkManager
+    }
     
     func requestAlbuns() {
         if !isLoadingData {

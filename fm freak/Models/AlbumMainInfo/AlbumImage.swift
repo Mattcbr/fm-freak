@@ -15,4 +15,9 @@ class AlbumImage: Codable {
         case text = "#text"
         case size = "size"
     }
+    
+    init(text: String, size: String) {
+        self.text = text
+        self.size = size
+    }
 }

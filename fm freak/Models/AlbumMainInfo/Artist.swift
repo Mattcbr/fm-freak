@@ -9,5 +9,8 @@ import Foundation
 
 class Artist: Codable {
     let name: String?
-    let mbid: String?
+    
+    init(name: String) {
+        self.name = name
+    }
 }

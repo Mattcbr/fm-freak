@@ -20,12 +20,13 @@
 		2F7F48B2268B291C007E39E8 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F48B1268B291C007E39E8 /* BasePresenter.swift */; };
 		2F7F48C0268B2A06007E39E8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F48BF268B2A06007E39E8 /* BaseView.swift */; };
 		2FA2A5ED268C9528005B9C19 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2A5EC268C9528005B9C19 /* MockNetworkManager.swift */; };
+		2FA2A5F5268CA3D2005B9C19 /* AlbumDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2A5F4268CA3D2005B9C19 /* AlbumDetailPresenterTests.swift */; };
 		2FABD4CC268A5EBA0075B70C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4CB268A5EBA0075B70C /* AppDelegate.swift */; };
 		2FABD4CE268A5EBA0075B70C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4CD268A5EBA0075B70C /* SceneDelegate.swift */; };
 		2FABD4D3268A5EBA0075B70C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FABD4D1268A5EBA0075B70C /* Main.storyboard */; };
 		2FABD4D5268A5EBE0075B70C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FABD4D4268A5EBE0075B70C /* Assets.xcassets */; };
 		2FABD4D8268A5EBE0075B70C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FABD4D6268A5EBE0075B70C /* LaunchScreen.storyboard */; };
-		2FABD4E3268A5EBE0075B70C /* topChartPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4E2268A5EBE0075B70C /* topChartPresenterTests.swift */; };
+		2FABD4E3268A5EBE0075B70C /* TopChartPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4E2268A5EBE0075B70C /* TopChartPresenterTests.swift */; };
 		2FABD4EE268A5EBE0075B70C /* fm_freakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4ED268A5EBE0075B70C /* fm_freakUITests.swift */; };
 		2FABD503268A5FD60075B70C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD502268A5FD60075B70C /* NetworkManager.swift */; };
 		2FB60041268B50A3003F473D /* AlbumImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB60040268B50A3003F473D /* AlbumImage.swift */; };
@@ -73,6 +74,7 @@
 		2F7F48B1268B291C007E39E8 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		2F7F48BF268B2A06007E39E8 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		2FA2A5EC268C9528005B9C19 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		2FA2A5F4268CA3D2005B9C19 /* AlbumDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailPresenterTests.swift; sourceTree = "<group>"; };
 		2FABD4C8268A5EBA0075B70C /* fm freak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fm freak.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FABD4CB268A5EBA0075B70C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FABD4CD268A5EBA0075B70C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +83,7 @@
 		2FABD4D7268A5EBE0075B70C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FABD4D9268A5EBE0075B70C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FABD4DE268A5EBE0075B70C /* fm freakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fm freakTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FABD4E2268A5EBE0075B70C /* topChartPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topChartPresenterTests.swift; sourceTree = "<group>"; };
+		2FABD4E2268A5EBE0075B70C /* TopChartPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartPresenterTests.swift; sourceTree = "<group>"; };
 		2FABD4E4268A5EBE0075B70C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FABD4E9268A5EBE0075B70C /* fm freakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fm freakUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FABD4ED268A5EBE0075B70C /* fm_freakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fm_freakUITests.swift; sourceTree = "<group>"; };
@@ -227,8 +229,9 @@
 		2FABD4E1268A5EBE0075B70C /* fm freakTests */ = {
 			isa = PBXGroup;
 			children = (
-				2FABD4E2268A5EBE0075B70C /* topChartPresenterTests.swift */,
+				2FABD4E2268A5EBE0075B70C /* TopChartPresenterTests.swift */,
 				2FABD4E4268A5EBE0075B70C /* Info.plist */,
+				2FA2A5F4268CA3D2005B9C19 /* AlbumDetailPresenterTests.swift */,
 			);
 			path = "fm freakTests";
 			sourceTree = "<group>";
@@ -508,7 +511,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FABD4E3268A5EBE0075B70C /* topChartPresenterTests.swift in Sources */,
+				2FABD4E3268A5EBE0075B70C /* TopChartPresenterTests.swift in Sources */,
+				2FA2A5F5268CA3D2005B9C19 /* AlbumDetailPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

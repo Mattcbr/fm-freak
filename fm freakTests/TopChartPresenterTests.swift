@@ -1,5 +1,5 @@
 //
-//  topChartPresenterTests.swift
+//  TopChartPresenterTests.swift
 //  fm freakTests
 //
 //  Created by Matheus Queiroz on 6/29/21.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import fm_freak
 
-class topChartPresenterTests: XCTestCase {
+class TopChartPresenterTests: XCTestCase {
 
     private var presenter: TopChartPresenter<MockTopChartView>?
     private var view = MockTopChartView()

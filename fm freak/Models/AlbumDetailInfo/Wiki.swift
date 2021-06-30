@@ -10,4 +10,9 @@ import Foundation
 class Wiki: Codable {
     let published: String?
     let content: String?
+    
+    init(published: String, content: String) {
+        self.published = published
+        self.content = content
+    }
 }

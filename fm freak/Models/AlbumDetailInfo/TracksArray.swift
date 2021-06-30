@@ -9,4 +9,8 @@ import Foundation
 
 class TracksArray: Codable {
     let track: [Track]?
+    
+    init(track:[Track]) {
+        self.track = track
+    }
 }

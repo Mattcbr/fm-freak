@@ -13,4 +13,12 @@ class AlbumDetailedInfo: Codable {
     let listeners: String?
     let tracks: TracksArray?
     let wiki: Wiki?
+    
+    init(name: String, artist: String, listeners: String, tracks: TracksArray, wiki: Wiki) {
+        self.name = name
+        self.artist = artist
+        self.listeners = listeners
+        self.tracks = tracks
+        self.wiki = wiki
+    }
 }

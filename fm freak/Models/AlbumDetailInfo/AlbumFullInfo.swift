@@ -9,4 +9,8 @@ import Foundation
 
 class AlbumFullInfo: Codable {
     let album: AlbumDetailedInfo?
+    
+    init(album: AlbumDetailedInfo) {
+        self.album = album
+    }
 }

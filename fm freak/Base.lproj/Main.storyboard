@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="261" y="-198"/>
         </scene>
-        <!--View Controller-->
+        <!--Album Detail View Controller-->
         <scene sceneID="h7c-oE-YNt">
             <objects>
-                <viewController id="4WC-3X-WJ7" sceneMemberID="viewController">
+                <viewController id="4WC-3X-WJ7" customClass="AlbumDetailViewController" customModule="fm_freak" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z8F-60-0BL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,36 +76,73 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iR5-4c-IxP" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1792.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="540.5"/>
                                         <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gMW-Ce-bS8">
+                                                <rect key="frame" x="197" y="260.5" width="20" height="20"/>
+                                            </activityIndicatorView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="albumCoverDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Xzd-zW-gSJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knm-Jq-TWz">
-                                                <rect key="frame" x="0.0" y="320" width="414" height="1472.5"/>
+                                                <rect key="frame" x="0.0" y="320" width="414" height="220.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu0-SX-0kr">
-                                                        <rect key="frame" x="16" y="16" width="382" height="1440.5"/>
-                                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo justo, suscipit eu luctus vitae, pretium eget nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec posuere nec nibh vel viverra. Vestibulum mi metus, mollis ac tortor sed, fringilla rutrum nulla. Donec ac enim nec magna fringilla maximus ac et mi. Vivamus dictum sodales metus nec facilisis. Nulla maximus viverra eros sed pellentesque.
-
-Duis sagittis ultricies metus in sollicitudin. Praesent laoreet urna nisi, rhoncus placerat mi commodo pretium. Nunc et libero consectetur, efficitur ante quis, aliquam massa. Proin a diam ultrices, vehicula lectus efficitur, scelerisque est. Etiam tincidunt euismod egestas. Quisque lobortis orci et ante tincidunt fringilla eu fermentum odio. Vivamus vel massa sed ex auctor vestibulum eu a odio. Mauris vitae velit porttitor, egestas neque sed, tincidunt ex. Vestibulum quis posuere arcu, at vehicula magna. Donec vel pellentesque odio, eget hendrerit sapien. Curabitur nec malesuada ipsum. Sed scelerisque elit ac nisl scelerisque, sit amet pharetra metus aliquam.
-
-Pellentesque malesuada leo lorem. Nunc sit amet scelerisque sem. Praesent aliquam metus nec molestie iaculis. Mauris dictum scelerisque massa sit amet ornare. Suspendisse ullamcorper, felis at varius vulputate, arcu mi tempus dui, quis faucibus nulla lorem eget est. Curabitur malesuada porttitor odio eget consectetur. Ut facilisis tristique justo vel fermentum. Duis porttitor purus eu laoreet lacinia. Vivamus vulputate nunc nibh, commodo bibendum felis molestie eu. Aliquam erat volutpat. Donec ut metus vel eros viverra maximus. Aliquam erat volutpat. Vivamus elementum sed purus sit amet ultricies. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla vitae lacinia lectus. Fusce efficitur, ex in efficitur efficitur, justo nunc finibus neque, tempus molestie metus augue vel diam. Ut at massa dignissim odio gravida fringilla. Fusce ac eros blandit, lacinia ante ut, eleifend mi. Maecenas mollis magna nunc, ut placerat nulla vulputate vel. Etiam porttitor, justo vitae efficitur efficitur, diam eros mattis orci, nec luctus neque felis et odio. Donec sagittis ornare diam, ac viverra quam ornare id. Nam tincidunt ante vel nisl consectetur, eget placerat enim gravida. Pellentesque commodo nibh et eros tincidunt fringilla. Fusce pharetra tincidunt ligula, ut varius diam varius vitae.
-
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam a odio nec libero ultricies tincidunt. Vivamus efficitur porttitor tempus. Integer pretium ex sit amet felis feugiat congue. Aenean vel ligula pellentesque, efficitur enim quis, dictum mauris. Aenean dignissim in justo sed iaculis. Nunc ut ipsum vitae eros malesuada facilisis. Aenean congue a magna molestie ornare.
-
-</mutableString>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu0-SX-0kr">
+                                                        <rect key="frame" x="16" y="16" width="382" height="38.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kju-8E-fDq">
+                                                        <rect key="frame" x="16" y="62.5" width="382" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracks Count Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpx-JI-BNX">
+                                                        <rect key="frame" x="16" y="94.5" width="382" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listeners Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cl-rp-84h">
+                                                        <rect key="frame" x="16" y="122" width="382" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMP-78-w22">
+                                                        <rect key="frame" x="16" y="149.5" width="382" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1p-nv-pxP">
+                                                        <rect key="frame" x="16" y="185" width="382" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="fpx-JI-BNX" firstAttribute="leading" secondItem="Knm-Jq-TWz" secondAttribute="leading" constant="16" id="3iT-Wf-Opg"/>
+                                                    <constraint firstItem="kju-8E-fDq" firstAttribute="top" secondItem="fu0-SX-0kr" secondAttribute="bottom" constant="8" id="62e-Xo-g6m"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fpx-JI-BNX" secondAttribute="trailing" constant="16" id="93O-Hh-jLf"/>
+                                                    <constraint firstItem="kju-8E-fDq" firstAttribute="leading" secondItem="Knm-Jq-TWz" secondAttribute="leading" constant="16" id="ATh-hL-OG8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="r1p-nv-pxP" secondAttribute="trailing" constant="16" id="CO0-eG-p2d"/>
+                                                    <constraint firstItem="r1p-nv-pxP" firstAttribute="leading" secondItem="Knm-Jq-TWz" secondAttribute="leading" constant="16" id="J1k-cr-q0b"/>
                                                     <constraint firstAttribute="trailing" secondItem="fu0-SX-0kr" secondAttribute="trailing" constant="16" id="MY1-Hk-2Pn"/>
-                                                    <constraint firstAttribute="bottom" secondItem="fu0-SX-0kr" secondAttribute="bottom" constant="16" id="N5X-sf-6OB"/>
+                                                    <constraint firstItem="r1p-nv-pxP" firstAttribute="top" secondItem="oMP-78-w22" secondAttribute="bottom" constant="16" id="MY2-VG-sp7"/>
+                                                    <constraint firstItem="4Cl-rp-84h" firstAttribute="leading" secondItem="Knm-Jq-TWz" secondAttribute="leading" constant="16" id="NO3-W5-YM6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oMP-78-w22" secondAttribute="trailing" constant="16" id="Ppe-PV-P4z"/>
+                                                    <constraint firstItem="oMP-78-w22" firstAttribute="top" secondItem="4Cl-rp-84h" secondAttribute="bottom" constant="8" id="RQ4-XK-Kqw"/>
+                                                    <constraint firstItem="oMP-78-w22" firstAttribute="leading" secondItem="Knm-Jq-TWz" secondAttribute="leading" constant="16" id="Ypu-as-zqG"/>
+                                                    <constraint firstItem="fpx-JI-BNX" firstAttribute="top" secondItem="kju-8E-fDq" secondAttribute="bottom" constant="8" id="fvR-WE-DOA"/>
+                                                    <constraint firstItem="4Cl-rp-84h" firstAttribute="top" secondItem="fpx-JI-BNX" secondAttribute="bottom" constant="8" id="lEb-7T-Swg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kju-8E-fDq" secondAttribute="trailing" constant="16" id="r6J-Vh-ANb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4Cl-rp-84h" secondAttribute="trailing" constant="16" id="rUO-LR-ihn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="r1p-nv-pxP" secondAttribute="bottom" constant="16" id="wNb-FI-Ric"/>
                                                     <constraint firstItem="fu0-SX-0kr" firstAttribute="leading" secondItem="Knm-Jq-TWz" secondAttribute="leading" constant="16" id="xj1-xD-qb9"/>
                                                     <constraint firstItem="fu0-SX-0kr" firstAttribute="top" secondItem="Knm-Jq-TWz" secondAttribute="top" constant="16" id="xuj-fh-nW3"/>
                                                 </constraints>
@@ -114,8 +151,10 @@ Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Xzd-zW-gSJ" secondAttribute="trailing" id="2jo-45-n8u"/>
+                                            <constraint firstItem="gMW-Ce-bS8" firstAttribute="centerX" secondItem="iR5-4c-IxP" secondAttribute="centerX" id="Q2i-uB-wN8"/>
                                             <constraint firstItem="Xzd-zW-gSJ" firstAttribute="bottom" secondItem="Knm-Jq-TWz" secondAttribute="top" id="VU6-YI-Edr"/>
                                             <constraint firstItem="Knm-Jq-TWz" firstAttribute="top" secondItem="iR5-4c-IxP" secondAttribute="top" constant="320" id="YDA-hE-ECg"/>
+                                            <constraint firstItem="gMW-Ce-bS8" firstAttribute="centerY" secondItem="iR5-4c-IxP" secondAttribute="centerY" id="dVo-Bw-EH3"/>
                                             <constraint firstAttribute="trailing" secondItem="Knm-Jq-TWz" secondAttribute="trailing" id="fJQ-7p-bn4"/>
                                             <constraint firstAttribute="bottom" secondItem="Knm-Jq-TWz" secondAttribute="bottom" id="jED-Wy-f7X"/>
                                             <constraint firstItem="Knm-Jq-TWz" firstAttribute="leading" secondItem="iR5-4c-IxP" secondAttribute="leading" id="sAR-wj-gBM"/>
@@ -143,10 +182,20 @@ Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="69h-iQ-0Oi"/>
+                    <connections>
+                        <outlet property="albumCoverImageView" destination="Xzd-zW-gSJ" id="iO2-Ua-4Uk"/>
+                        <outlet property="artistLabel" destination="kju-8E-fDq" id="U4m-iJ-xXo"/>
+                        <outlet property="contentLabel" destination="r1p-nv-pxP" id="SbP-eb-VQB"/>
+                        <outlet property="listenersLabel" destination="4Cl-rp-84h" id="eiw-d7-ncT"/>
+                        <outlet property="loadingIndicator" destination="gMW-Ce-bS8" id="NYW-It-Z4j"/>
+                        <outlet property="releaseDateLabel" destination="oMP-78-w22" id="arr-zp-UUe"/>
+                        <outlet property="titleLabel" destination="fu0-SX-0kr" id="egV-Y4-Rum"/>
+                        <outlet property="tracksCountLabel" destination="fpx-JI-BNX" id="R88-pz-Wvh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqm-mE-rK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1132" y="-198"/>
+            <point key="canvasLocation" x="1131.8840579710145" y="-198.21428571428569"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BNY-mO-7Yz">

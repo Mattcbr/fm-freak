@@ -9,4 +9,5 @@ import Foundation
 
 class Utils {
     let appClosingKey = "CloseCounter"
+    let detailsSegueKey = "detailViewSegue"
 }

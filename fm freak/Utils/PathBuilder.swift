@@ -22,6 +22,11 @@ class PathBuilder {
         return makeFullUrl(withParameters: parameters)
     }
     
+    func getAlbumDetailURL(forAlbum albumName: String, artistName: String) -> String {
+        let parameters = "?method=album.getInfo&api_key=\(apiKey)&artist=\(artistName)&album=\(albumName)"
+        return makeFullUrl(withParameters: parameters)
+    }
+    
     // MARK: Making Full URL
     private func makeFullUrl(withParameters params: String) -> String {
         return baseURL+params+jsonSuffix

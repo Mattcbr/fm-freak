@@ -23,7 +23,13 @@ class NetworkManager {
         }
     }
     
-    func getRequestForUrl<T>(_ requestUrl: String, _ completion: @escaping (Swift.Result<T, HttpRequestError>) -> Void) where T : Codable {
+    func makeDetailedAlbumRequest(forAlbum albumName: String, artistName: String, completion: @escaping (Swift.Result<AlbumFullInfo, HttpRequestError>) -> Void) {
+        getRequestForUrl(pathBuilder.getAlbumDetailURL(forAlbum: albumName, artistName: artistName)) { result in
+            completion(result)
+        }
+    }
+    
+    private func getRequestForUrl<T>(_ requestUrl: String, _ completion: @escaping (Swift.Result<T, HttpRequestError>) -> Void) where T : Codable {
 
         Alamofire.request(requestUrl).responseJSON { response in
             switch response.result {

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "182-1829707_radio-microphone-png-download-radio-image-microphone-png.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

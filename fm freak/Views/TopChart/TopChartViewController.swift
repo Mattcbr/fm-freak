@@ -18,6 +18,8 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     private var albunsArray = [Album]()
     private var imagesDictionary = [String: UIImage]()
     
+    private var selectedAlbum: Album?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,7 +82,8 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "detailViewSegue", sender: self)
+        selectedAlbum = albunsArray[indexPath.row]
+        performSegue(withIdentifier: Utils().detailsSegueKey, sender: self)
     }
     
     // MARK: Infinite Scroll
@@ -94,6 +97,19 @@ class TopChartViewController: UICollectionViewController, TopChartView {
         
         if (diff<30) {    //If the scroll is near the bottom make a new request.
             presenter?.requestMoreAlbums()
+        }
+    }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Utils().detailsSegueKey {
+            guard let destinationVCAsDetail = segue.destination as? AlbumDetailViewController else {return}
+            destinationVCAsDetail.albumName = selectedAlbum?.name
+            destinationVCAsDetail.artistName = selectedAlbum?.artist?.name
+            if let albumName = selectedAlbum?.name, let albumCover = imagesDictionary[albumName] {
+                destinationVCAsDetail.albumCover = albumCover
+            }
         }
     }
     

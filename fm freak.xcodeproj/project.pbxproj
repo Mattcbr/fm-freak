@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F235C7F268CB96800DD4671 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F235C7E268CB96800DD4671 /* DatabaseManager.swift */; };
+		2F235C84268CC1FE00DD4671 /* RealmDetailedAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F235C83268CC1FE00DD4671 /* RealmDetailedAlbum.swift */; };
+		2F235C89268CC3E100DD4671 /* DatabaseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F235C88268CC3E100DD4671 /* DatabaseMapper.swift */; };
 		2F596EA3268B2F9500C99D1D /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F596EA2268B2F9500C99D1D /* PathBuilder.swift */; };
 		2F596EBE268B459B00C99D1D /* TopChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F596EBD268B459B00C99D1D /* TopChartCollectionViewCell.swift */; };
 		2F596EC3268B460B00C99D1D /* TopChartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F596EC2268B460B00C99D1D /* TopChartCollectionViewCell.xib */; };
@@ -53,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		14A07031307A17DF42CE414D /* Pods_fm_freak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fm_freak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F235C7E268CB96800DD4671 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		2F235C83268CC1FE00DD4671 /* RealmDetailedAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDetailedAlbum.swift; sourceTree = "<group>"; };
+		2F235C88268CC3E100DD4671 /* DatabaseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMapper.swift; sourceTree = "<group>"; };
 		2F596EA2268B2F9500C99D1D /* PathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
 		2F596EBD268B459B00C99D1D /* TopChartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F596EC2268B460B00C99D1D /* TopChartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopChartCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -111,6 +117,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F235C7D268CB95300DD4671 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				2F235C87268CC3D200DD4671 /* Mapper */,
+				2F235C82268CC1ED00DD4671 /* Models */,
+				2F235C7E268CB96800DD4671 /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		2F235C82268CC1ED00DD4671 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F235C83268CC1FE00DD4671 /* RealmDetailedAlbum.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2F235C87268CC3D200DD4671 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				2F235C88268CC3E100DD4671 /* DatabaseMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 		2F596EB9268B457800C99D1D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +223,7 @@
 		2FABD4CA268A5EBA0075B70C /* fm freak */ = {
 			isa = PBXGroup;
 			children = (
+				2F235C7D268CB95300DD4671 /* Database */,
 				2FA2A5EB268C950D005B9C19 /* Mocks */,
 				2F7F48B0268B290B007E39E8 /* Utils */,
 				2F7F4875268B1BCA007E39E8 /* Models */,
@@ -422,6 +455,7 @@
 			files = (
 				2F7F485E268B1355007E39E8 /* TopChartView.swift in Sources */,
 				2F7F4863268B1373007E39E8 /* TopChartViewController.swift in Sources */,
+				2F235C7F268CB96800DD4671 /* DatabaseManager.swift in Sources */,
 				2F596EA3268B2F9500C99D1D /* PathBuilder.swift in Sources */,
 				2FABD503268A5FD60075B70C /* NetworkManager.swift in Sources */,
 				2FA2A5ED268C9528005B9C19 /* MockNetworkManager.swift in Sources */,
@@ -436,9 +470,11 @@
 				2FABD4CE268A5EBA0075B70C /* SceneDelegate.swift in Sources */,
 				2F7F48AC268B28DF007E39E8 /* TopChartPresenter.swift in Sources */,
 				2FBB035C268C6A0800C5C8B4 /* AlbumDetailView.swift in Sources */,
+				2F235C89268CC3E100DD4671 /* DatabaseMapper.swift in Sources */,
 				2FBB0361268C6A1900C5C8B4 /* AlbumDetailPresenter.swift in Sources */,
 				2FBB036C268C6F7C00C5C8B4 /* TracksArray.swift in Sources */,
 				2FBB0376268C6FA500C5C8B4 /* Wiki.swift in Sources */,
+				2F235C84268CC1FE00DD4671 /* RealmDetailedAlbum.swift in Sources */,
 				2FB60041268B50A3003F473D /* AlbumImage.swift in Sources */,
 				2F596EBE268B459B00C99D1D /* TopChartCollectionViewCell.swift in Sources */,
 				2F7F48A4268B25A7007E39E8 /* AlbumsArray.swift in Sources */,

@@ -13,7 +13,7 @@ class Album: Codable {
     let artist: Artist?
     let image: [AlbumImage]?
     
-    init(name: String, artist: Artist, image: [AlbumImage]) {
+    init(name: String?, artist: Artist?, image: [AlbumImage]?) {
         self.name = name
         self.artist = artist
         self.image = image

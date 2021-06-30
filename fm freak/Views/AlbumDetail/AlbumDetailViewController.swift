@@ -17,6 +17,7 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var albumCoverImageView: UIImageView!
+    @IBOutlet weak var favoritesButton: UIButton!
     
     private var presenter: AlbumDetailPresenter<AlbumDetailViewController>?
     
@@ -28,7 +29,8 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         super.viewDidLoad()
 
         if presenter == nil {
-            presenter = AlbumDetailPresenter(networkManager: NetworkManager.sharedInstance)
+            presenter = AlbumDetailPresenter(networkManager: NetworkManager.sharedInstance,
+                                             databaseManager: DatabaseManager.sharedInstance)
             presenter?.attachView(self)
         }
         
@@ -71,12 +73,24 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         } else {
             contentLabel.text = "Details unavailable"
         }
-        
+        setupFavoritesButton()
         loadingIndicator.stopAnimating()
         albumCoverImageView.image = albumCover
     }
     
+    func setupFavoritesButton() {
+        let isFavorite = presenter!.isAlbumFavorite()
+        let buttonText = isFavorite ? "Remove from favorites" : "Add to favorites"
+        
+        favoritesButton.titleLabel?.textAlignment = .center
+        favoritesButton.setTitle(buttonText, for: .normal)
+    }
+    
     func showError(_ error: Error) {
         //TODO: Implement this
+    }
+    
+    @IBAction func didSelectFavoritesButton(_ sender: Any) {
+        presenter?.didSelectFavoritesButton()
     }
 }

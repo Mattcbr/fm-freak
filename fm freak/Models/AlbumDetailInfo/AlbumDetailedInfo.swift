@@ -14,7 +14,7 @@ class AlbumDetailedInfo: Codable {
     let tracks: TracksArray?
     let wiki: Wiki?
     
-    init(name: String, artist: String, listeners: String, tracks: TracksArray, wiki: Wiki) {
+    init(name: String?, artist: String?, listeners: String?, tracks: TracksArray?, wiki: Wiki?) {
         self.name = name
         self.artist = artist
         self.listeners = listeners

@@ -11,7 +11,7 @@ class Track: Codable {
     let name: String?
     let duration: Int?
     
-    init(name: String, duration: Int) {
+    init(name: String?, duration: Int?) {
         self.name = name
         self.duration = duration
     }

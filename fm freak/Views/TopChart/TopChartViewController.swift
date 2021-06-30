@@ -19,16 +19,22 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     private var imagesDictionary = [String: UIImage]()
     
     private var selectedAlbum: Album?
+    private var isFavoritesTab = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if presenter == nil {
-            presenter = TopChartPresenter(networkManager: NetworkManager.sharedInstance)
+            if let tabBarIndex = tabBarController?.selectedIndex {
+                isFavoritesTab = tabBarIndex == 0
+            }
+            presenter = TopChartPresenter(networkManager: NetworkManager.sharedInstance,
+                                          databaseManager: DatabaseManager.sharedInstance,
+                                          isFavoritesScreen: isFavoritesTab)
             presenter?.attachView(self)
         }
         
-        presenter?.requestAlbuns()
+        presenter?.getAlbums()
         
         let albumCell = UINib.init(nibName: "TopChartCollectionViewCell", bundle: nil)
         self.collectionView.register(albumCell, forCellWithReuseIdentifier:reuseIdentifier)
@@ -40,9 +46,19 @@ class TopChartViewController: UICollectionViewController, TopChartView {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if isFavoritesTab {
+            presenter?.getAlbums()
+        }
+    }
+    
     // MARK: TopChartView Protocol Functions
     func addNewAlbunsToArray(newAlbuns: [Album]) {
-        albunsArray.append(contentsOf: newAlbuns)
+        if isFavoritesTab {
+            albunsArray = newAlbuns
+        } else {
+            albunsArray.append(contentsOf: newAlbuns)
+        }
         collectionView.reloadData()
     }
     

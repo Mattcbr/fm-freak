@@ -11,15 +11,27 @@ import UIKit
 class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
     
     let networkManager: NetworkManager
+    let databaseManager: DatabaseManager
     
     private var lastRequestedPage = 1
     private var isLoadingData = false
+    private var isFavoritesScreen: Bool
     
-    init(networkManager: NetworkManager) {
+    init(networkManager: NetworkManager, databaseManager: DatabaseManager, isFavoritesScreen: Bool) {
         self.networkManager = networkManager
+        self.databaseManager = databaseManager
+        self.isFavoritesScreen = isFavoritesScreen
     }
     
-    func requestAlbuns() {
+    func getAlbums() {
+        if isFavoritesScreen {
+            requestAlbumsFromDatabase()
+        } else {
+            requestAlbunsFromNetwork()
+        }
+    }
+    
+    func requestAlbunsFromNetwork() {
         if !isLoadingData {
             isLoadingData = true
             networkManager.makeHipHopRequest(forPage: lastRequestedPage) { [weak self] result in
@@ -47,6 +59,19 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         }
     }
     
+    func requestAlbumsFromDatabase() {
+        let detailedAlbumsArray = databaseManager.getAllFavorites()
+        var albumsArray = [Album]()
+        
+        detailedAlbumsArray.forEach { detailedAlbum in
+            let albumArtist = Artist(name: detailedAlbum.artist)
+            let convertedAlbum = Album(name: detailedAlbum.name, artist: albumArtist, image: [])
+            albumsArray.append(convertedAlbum)
+        }
+        
+        self.baseView?.addNewAlbunsToArray(newAlbuns: albumsArray)
+    }
+    
     private func requestImages(forAlbum album: Album, completion: @escaping (_ imagesDictionary: (String, UIImage)) -> Void) {
         self.networkManager.requestImage(forAlbum: album) { albumCoverDictionary in
             completion(albumCoverDictionary)
@@ -55,8 +80,8 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
     
     func requestMoreAlbums() {
         lastRequestedPage += isLoadingData ? 0 : 1
-        if lastRequestedPage <= 20 {
-            requestAlbuns()
+        if lastRequestedPage <= 20 && !isFavoritesScreen {
+            requestAlbunsFromNetwork()
         }
     }
     

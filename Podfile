@@ -4,6 +4,7 @@ platform :ios, '14.0'
 use_frameworks!
 
 target 'fm freak' do
-  pod 'AlamofireImage'
-  pod 'Alamofire'
+  pod 'AlamofireImage', '3.5.0'
+  pod 'Alamofire', '4.8.1'
+  pod 'RealmSwift'
 end

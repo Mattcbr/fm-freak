@@ -5,7 +5,7 @@
 //  Created by Matheus Queiroz on 6/30/21.
 //
 
-import Foundation
+import UIKit
 
 class AlbumDetailPresenter<T: AlbumDetailView>: BasePresenter<T> {
     
@@ -44,18 +44,18 @@ class AlbumDetailPresenter<T: AlbumDetailView>: BasePresenter<T> {
         return favoritesArray.contains(where: {$0.name == selectedAlbum?.name})
     }
     
-    func didSelectFavoritesButton() {
+    func didSelectFavoritesButton(withImage image: UIImage?) {
         if let selectedAlbumUnwrapped = selectedAlbum {
             if isAlbumFavorite() {
                 removeAlbumFromFavorites(albumToRemove: selectedAlbumUnwrapped)
             } else {
-                addAlbumToFavorites(albumToAdd: selectedAlbumUnwrapped)
+                addAlbumToFavorites(albumToAdd: selectedAlbumUnwrapped, albumImage: image ?? UIImage())
             }
         }
     }
     
-    private func addAlbumToFavorites(albumToAdd: AlbumDetailedInfo) {
-        databaseManager.addToFavorites(album: albumToAdd) { [weak self] result in
+    private func addAlbumToFavorites(albumToAdd: AlbumDetailedInfo, albumImage: UIImage) {
+        databaseManager.addToFavorites(album: albumToAdd, image: albumImage) { [weak self] result in
             switch result {
             case .success:
                 self?.baseView?.showAddToFavoriteCompleteDialog(wasSuccessful: true)

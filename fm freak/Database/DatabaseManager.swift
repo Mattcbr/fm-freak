@@ -46,12 +46,39 @@ class DatabaseManager {
         }
     }
     
-    func addToFavorites(album: AlbumDetailedInfo, _ completion: @escaping (Swift.Result<Bool, Error>) -> Void) {
+    func getSavedImage(forAlbums albums: [String?], _ completion: @escaping ([String: UIImage]) -> Void) {
+        var albumsDict = [String: UIImage]()
+        let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        
+        let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
+        
+        if let dirPath = paths.first {
+            albums.forEach { album in
+                if let albumUnwrapped = album {
+                    let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent("\(albumUnwrapped).png")
+                    let image = UIImage(contentsOfFile: imageUrl.path)
+                    
+                    albumsDict[albumUnwrapped] = image
+                }
+            }
+        }
+        
+        completion(albumsDict)
+    }
+    
+    func addToFavorites(album: AlbumDetailedInfo, image: UIImage, _ completion: @escaping (Swift.Result<Bool, Error>) -> Void) {
         let cacheModel = mapper.mapToRealmDetailedInfo(object: album)
         do {
+            // Saving to the Database
             let realm = try getDatabase()
             try realm.write {
                 realm.add(cacheModel, update: .all)
+            }
+            
+            // Saving image to disk
+            if let data = image.jpegData(compressionQuality: 1), let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL {
+                try data.write(to: directory.appendingPathComponent("\(album.name!).png")!) //Check this force cast
             }
             completion(.success(true))
         } catch let error as NSError {

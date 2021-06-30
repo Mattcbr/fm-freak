@@ -99,7 +99,7 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
     
     @IBAction func didSelectFavoritesButton(_ sender: Any) {
         if !isFavorite {
-            presenter?.didSelectFavoritesButton()
+            presenter?.didSelectFavoritesButton(withImage: albumCover)
         } else {
             showDeleteConfirmationDialog()
         }
@@ -110,7 +110,7 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
                                       message: "Do you really want to remove this album from your favorites?",
                                       preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "Remove", style: .destructive) {[weak self] (action) in
-            self?.presenter?.didSelectFavoritesButton()
+            self?.presenter?.didSelectFavoritesButton(withImage: self?.albumCover)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         

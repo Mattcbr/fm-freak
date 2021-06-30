@@ -42,7 +42,7 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
                         self?.isLoadingData = false
                         var imagesDictionary = [String: UIImage]()
                         for (index, album) in albumsOnly.enumerated() {
-                            self?.requestImages(forAlbum: album) { imageTuple in
+                            self?.requestImagesFromNetwork(forAlbum: album) { imageTuple in
                                 imagesDictionary[imageTuple.0] = imageTuple.1
                                 
                                 if index == albumsOnly.count - 1 {
@@ -70,11 +70,19 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         }
         
         self.baseView?.addNewAlbunsToArray(newAlbuns: albumsArray)
+        self.requestImagesFromDatabase(forAlbums: albumsArray)
     }
     
-    private func requestImages(forAlbum album: Album, completion: @escaping (_ imagesDictionary: (String, UIImage)) -> Void) {
+    private func requestImagesFromNetwork(forAlbum album: Album, completion: @escaping (_ imagesDictionary: (String, UIImage)) -> Void) {
         self.networkManager.requestImage(forAlbum: album) { albumCoverDictionary in
             completion(albumCoverDictionary)
+        }
+    }
+    
+    private func requestImagesFromDatabase(forAlbums albums: [Album]) {
+        let albumsNameArray = albums.map({$0.name})
+        self.databaseManager.getSavedImage(forAlbums: albumsNameArray) { [weak self] albumImagesDict in
+            self?.baseView?.addNewImagesToDictionary(newImages: albumImagesDict)
         }
     }
     

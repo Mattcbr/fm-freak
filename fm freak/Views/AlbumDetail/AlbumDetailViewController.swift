@@ -20,10 +20,13 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
     @IBOutlet weak var favoritesButton: UIButton!
     
     private var presenter: AlbumDetailPresenter<AlbumDetailViewController>?
+    private var isFavorite = false
     
     var albumName: String?
     var artistName: String?
     var albumCover = UIImage(named: "AppDefault")
+    
+    // MARK: Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,8 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         
         albumCoverImageView.image = albumCover
     }
+    
+    // MARK: UI Setup
     
     func showAlbumDetail(forAlbum album: AlbumDetailedInfo) {
         titleLabel.text = album.name
@@ -90,7 +95,28 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         //TODO: Implement this
     }
     
+    // MARK: Favorites
+    
     @IBAction func didSelectFavoritesButton(_ sender: Any) {
-        presenter?.didSelectFavoritesButton()
+        if !isFavorite {
+            presenter?.didSelectFavoritesButton()
+        } else {
+            showDeleteConfirmationDialog()
+        }
+    }
+    
+    private func showDeleteConfirmationDialog() {
+        let alert = UIAlertController(title: "Are you sure?",
+                                      message: "Do you really want to remove this album from your favorites?",
+                                      preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Remove", style: .destructive) {[weak self] (action) in
+            self?.presenter?.didSelectFavoritesButton()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

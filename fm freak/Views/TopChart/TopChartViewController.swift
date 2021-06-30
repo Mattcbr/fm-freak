@@ -21,6 +21,8 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     private var selectedAlbum: Album?
     private var isFavoritesTab = false
     
+    // MARK: LifeCycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -27,7 +27,6 @@
 		2FABD4D5268A5EBE0075B70C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FABD4D4268A5EBE0075B70C /* Assets.xcassets */; };
 		2FABD4D8268A5EBE0075B70C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FABD4D6268A5EBE0075B70C /* LaunchScreen.storyboard */; };
 		2FABD4E3268A5EBE0075B70C /* TopChartPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4E2268A5EBE0075B70C /* TopChartPresenterTests.swift */; };
-		2FABD4EE268A5EBE0075B70C /* fm_freakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD4ED268A5EBE0075B70C /* fm_freakUITests.swift */; };
 		2FABD503268A5FD60075B70C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABD502268A5FD60075B70C /* NetworkManager.swift */; };
 		2FB60041268B50A3003F473D /* AlbumImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB60040268B50A3003F473D /* AlbumImage.swift */; };
 		2FB60063268B8742003F473D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB60062268B8741003F473D /* Utils.swift */; };
@@ -44,13 +43,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		2FABD4DF268A5EBE0075B70C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2FABD4C0268A5EBA0075B70C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2FABD4C7268A5EBA0075B70C;
-			remoteInfo = "fm freak";
-		};
-		2FABD4EA268A5EBE0075B70C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2FABD4C0268A5EBA0075B70C /* Project object */;
 			proxyType = 1;
@@ -85,9 +77,6 @@
 		2FABD4DE268A5EBE0075B70C /* fm freakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fm freakTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FABD4E2268A5EBE0075B70C /* TopChartPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartPresenterTests.swift; sourceTree = "<group>"; };
 		2FABD4E4268A5EBE0075B70C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2FABD4E9268A5EBE0075B70C /* fm freakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fm freakUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FABD4ED268A5EBE0075B70C /* fm_freakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fm_freakUITests.swift; sourceTree = "<group>"; };
-		2FABD4EF268A5EBE0075B70C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FABD502268A5FD60075B70C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2FB60040268B50A3003F473D /* AlbumImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImage.swift; sourceTree = "<group>"; };
 		2FB60062268B8741003F473D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -113,13 +102,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2FABD4DB268A5EBE0075B70C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2FABD4E6268A5EBE0075B70C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -191,7 +173,6 @@
 			children = (
 				2FABD4CA268A5EBA0075B70C /* fm freak */,
 				2FABD4E1268A5EBE0075B70C /* fm freakTests */,
-				2FABD4EC268A5EBE0075B70C /* fm freakUITests */,
 				2FABD4C9268A5EBA0075B70C /* Products */,
 				EFF297C0DADFB6C365A71F56 /* Pods */,
 				5F1F26821535180FC26D328C /* Frameworks */,
@@ -203,7 +184,6 @@
 			children = (
 				2FABD4C8268A5EBA0075B70C /* fm freak.app */,
 				2FABD4DE268A5EBE0075B70C /* fm freakTests.xctest */,
-				2FABD4E9268A5EBE0075B70C /* fm freakUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,15 +214,6 @@
 				2FA2A5F4268CA3D2005B9C19 /* AlbumDetailPresenterTests.swift */,
 			);
 			path = "fm freakTests";
-			sourceTree = "<group>";
-		};
-		2FABD4EC268A5EBE0075B70C /* fm freakUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2FABD4ED268A5EBE0075B70C /* fm_freakUITests.swift */,
-				2FABD4EF268A5EBE0075B70C /* Info.plist */,
-			);
-			path = "fm freakUITests";
 			sourceTree = "<group>";
 		};
 		2FABD501268A5FC00075B70C /* Network */ = {
@@ -344,24 +315,6 @@
 			productReference = 2FABD4DE268A5EBE0075B70C /* fm freakTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2FABD4E8268A5EBE0075B70C /* fm freakUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2FABD4F8268A5EBE0075B70C /* Build configuration list for PBXNativeTarget "fm freakUITests" */;
-			buildPhases = (
-				2FABD4E5268A5EBE0075B70C /* Sources */,
-				2FABD4E6268A5EBE0075B70C /* Frameworks */,
-				2FABD4E7268A5EBE0075B70C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2FABD4EB268A5EBE0075B70C /* PBXTargetDependency */,
-			);
-			name = "fm freakUITests";
-			productName = "fm freakUITests";
-			productReference = 2FABD4E9268A5EBE0075B70C /* fm freakUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -375,10 +328,6 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					2FABD4DD268A5EBE0075B70C = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 2FABD4C7268A5EBA0075B70C;
-					};
-					2FABD4E8268A5EBE0075B70C = {
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 2FABD4C7268A5EBA0075B70C;
 					};
@@ -399,7 +348,6 @@
 			targets = (
 				2FABD4C7268A5EBA0075B70C /* fm freak */,
 				2FABD4DD268A5EBE0075B70C /* fm freakTests */,
-				2FABD4E8268A5EBE0075B70C /* fm freakUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -417,13 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2FABD4DC268A5EBE0075B70C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2FABD4E7268A5EBE0075B70C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -516,14 +457,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2FABD4E5268A5EBE0075B70C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2FABD4EE268A5EBE0075B70C /* fm_freakUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -531,11 +464,6 @@
 			isa = PBXTargetDependency;
 			target = 2FABD4C7268A5EBA0075B70C /* fm freak */;
 			targetProxy = 2FABD4DF268A5EBE0075B70C /* PBXContainerItemProxy */;
-		};
-		2FABD4EB268A5EBE0075B70C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2FABD4C7268A5EBA0075B70C /* fm freak */;
-			targetProxy = 2FABD4EA268A5EBE0075B70C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -759,46 +687,6 @@
 			};
 			name = Release;
 		};
-		2FABD4F9268A5EBE0075B70C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S27M9ZF22P;
-				INFOPLIST_FILE = "fm freakUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattcbr.fm-freakUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "fm freak";
-			};
-			name = Debug;
-		};
-		2FABD4FA268A5EBE0075B70C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S27M9ZF22P;
-				INFOPLIST_FILE = "fm freakUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattcbr.fm-freakUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "fm freak";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -825,15 +713,6 @@
 			buildConfigurations = (
 				2FABD4F6268A5EBE0075B70C /* Debug */,
 				2FABD4F7268A5EBE0075B70C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2FABD4F8268A5EBE0075B70C /* Build configuration list for PBXNativeTarget "fm freakUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2FABD4F9268A5EBE0075B70C /* Debug */,
-				2FABD4FA268A5EBE0075B70C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

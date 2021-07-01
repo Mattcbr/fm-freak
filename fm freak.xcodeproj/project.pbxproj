@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1FA63D268DCBA4003963DB /* MockDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1FA63C268DCBA3003963DB /* MockDatabaseManager.swift */; };
 		2F235C7F268CB96800DD4671 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F235C7E268CB96800DD4671 /* DatabaseManager.swift */; };
 		2F235C84268CC1FE00DD4671 /* RealmDetailedAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F235C83268CC1FE00DD4671 /* RealmDetailedAlbum.swift */; };
 		2F235C89268CC3E100DD4671 /* DatabaseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F235C88268CC3E100DD4671 /* DatabaseMapper.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		14A07031307A17DF42CE414D /* Pods_fm_freak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fm_freak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F1FA63C268DCBA3003963DB /* MockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseManager.swift; sourceTree = "<group>"; };
 		2F235C7E268CB96800DD4671 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		2F235C83268CC1FE00DD4671 /* RealmDetailedAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDetailedAlbum.swift; sourceTree = "<group>"; };
 		2F235C88268CC3E100DD4671 /* DatabaseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMapper.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				2FA2A5EC268C9528005B9C19 /* MockNetworkManager.swift */,
+				2F1FA63C268DCBA3003963DB /* MockDatabaseManager.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				2F235C7F268CB96800DD4671 /* DatabaseManager.swift in Sources */,
 				2F596EA3268B2F9500C99D1D /* PathBuilder.swift in Sources */,
 				2FABD503268A5FD60075B70C /* NetworkManager.swift in Sources */,
+				2F1FA63D268DCBA4003963DB /* MockDatabaseManager.swift in Sources */,
 				2FA2A5ED268C9528005B9C19 /* MockNetworkManager.swift in Sources */,
 				2F7F48C0268B2A06007E39E8 /* BaseView.swift in Sources */,
 				2F7F4877268B1BDE007E39E8 /* Album.swift in Sources */,

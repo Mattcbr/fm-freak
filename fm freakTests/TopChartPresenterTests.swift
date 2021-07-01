@@ -13,7 +13,7 @@ class TopChartPresenterTests: XCTestCase {
     private var presenter: TopChartPresenter<MockTopChartView>?
     private var view = MockTopChartView()
     private var networkManager: MockNetworkManager?
-    private var databaseManager = DatabaseManager.sharedInstance
+    private var databaseManager = MockDatabaseManager()
     
     override func setUp() {
         

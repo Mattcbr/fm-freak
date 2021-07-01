@@ -26,6 +26,8 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Starting the presenter
+        
         if presenter == nil {
             if let tabBarIndex = tabBarController?.selectedIndex {
                 isFavoritesTab = tabBarIndex == 0
@@ -36,21 +38,26 @@ class TopChartViewController: UICollectionViewController, TopChartView {
             presenter?.attachView(self)
         }
         
-        presenter?.getAlbums()
+        // Registering cells
         
         let albumCell = UINib.init(nibName: "TopChartCollectionViewCell", bundle: nil)
         self.collectionView.register(albumCell, forCellWithReuseIdentifier:reuseIdentifier)
         
-        if presenter?.shouldShowAppReview() == true {
-            if let foregroundScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                SKStoreReviewController.requestReview(in: foregroundScene)
-            }
-        }
+        presenter?.getAlbums()
+        checkAndDisplayAppReview()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if isFavoritesTab {
             presenter?.getAlbums()
+        }
+    }
+    
+    private func checkAndDisplayAppReview() {
+        if presenter?.shouldShowAppReview() == true {
+            if let foregroundScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: foregroundScene)
+            }
         }
     }
     

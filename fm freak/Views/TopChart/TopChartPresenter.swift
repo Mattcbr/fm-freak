@@ -22,7 +22,11 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         self.databaseManager = databaseManager
         self.isFavoritesScreen = isFavoritesScreen
     }
+    // MARK: Requests
     
+    /**
+     This verifies if the album should be requested from the database or from the network, and requests it
+     */
     func getAlbums() {
         if isFavoritesScreen {
             requestAlbumsFromDatabase()
@@ -31,6 +35,11 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         }
     }
     
+    // MARK: Network Requests
+    
+    /**
+     This requests albums to the network
+     */
     private func requestAlbunsFromNetwork() {
         if !isLoadingData {
             isLoadingData = true
@@ -61,6 +70,23 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         }
     }
     
+    /**
+     This requests the album image to the network
+     
+     - Parameter album: The album for which the image should be requested
+     - Parameter completion: The callback that is called after the operations are completed
+     */
+    private func requestImagesFromNetwork(forAlbum album: Album, completion: @escaping (_ imagesDictionary: (String, UIImage)) -> Void) {
+        self.networkManager.requestImage(forAlbum: album) { albumCoverDictionary in
+            completion(albumCoverDictionary)
+        }
+    }
+    
+    // MARK: Database Requests
+    
+    /**
+     This requests albums to the database
+     */
     private func requestAlbumsFromDatabase() {
         let detailedAlbumsArray = databaseManager.getAllFavorites()
         var albumsArray = [Album]()
@@ -75,12 +101,11 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         self.requestImagesFromDatabase(forAlbums: albumsArray)
     }
     
-    private func requestImagesFromNetwork(forAlbum album: Album, completion: @escaping (_ imagesDictionary: (String, UIImage)) -> Void) {
-        self.networkManager.requestImage(forAlbum: album) { albumCoverDictionary in
-            completion(albumCoverDictionary)
-        }
-    }
-    
+    /**
+     This requests the album image to the database
+     
+     - Parameter album: The album for which the image should be requested
+     */
     private func requestImagesFromDatabase(forAlbums albums: [Album]) {
         let albumsNameArray = albums.map({$0.name})
         self.databaseManager.getSavedImage(forAlbums: albumsNameArray) { [weak self] albumImagesDict in
@@ -88,6 +113,11 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         }
     }
     
+    // MARK: Infinite Scroll
+    
+    /**
+     This requests more images to the network
+     */
     func requestMoreAlbums() {
         lastRequestedPage += isLoadingData ? 0 : 1
         if lastRequestedPage <= 20 && !isFavoritesScreen {
@@ -97,6 +127,11 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
     
     // MARK: App Review
     
+    /**
+     This verifies if the app should show the app review dialog
+     
+     - Returns: A boolean indicating if the app review should be shown
+     */
     func shouldShowAppReview() -> Bool {
         let appClosingCounter = UserDefaults.standard.integer(forKey: Utils().appClosingKey)
         return appClosingCounter >= 9

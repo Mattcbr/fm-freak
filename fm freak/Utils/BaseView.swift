@@ -8,5 +8,8 @@
 import Foundation
 
 public protocol BaseView {
+    /**
+     This function should be called every time the view has an error to handle
+     */
     func showError(_ error: Error?)
 }

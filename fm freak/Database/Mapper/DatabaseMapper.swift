@@ -8,6 +8,13 @@
 import Foundation
 
 class DatabaseMapper {
+    
+    /**
+     This function maps the information received from the database to an `AlbumDetailedInfo` object.
+     
+     - Parameter cached: The object received from the database
+     - Returns: an `AlbumDetailedInfo` object based on the input object
+     */
     func mapToDetailedInfo(cached: RealmDetailedAlbum) -> AlbumDetailedInfo {
         
         let wiki = Wiki(published: cached.wikiPublished, content: cached.wikiContent)
@@ -30,6 +37,12 @@ class DatabaseMapper {
         return detailedInfoToReturn
     }
     
+    /**
+     This function maps the `AlbumDetailedInfo` object to an `RealmDetailedAlbum`
+     
+     - Parameter object: The object that should be mapped
+     - Returns: an `RealmDetailedAlbum` object based on the input object
+     */
     func mapToRealmDetailedInfo(object: AlbumDetailedInfo) -> RealmDetailedAlbum {
         let detailedInfoToReturn = RealmDetailedAlbum()
         

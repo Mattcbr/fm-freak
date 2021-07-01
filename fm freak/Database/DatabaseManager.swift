@@ -16,6 +16,13 @@ class DatabaseManager {
     private var shouldUpdate = true
     private let mapper = DatabaseMapper()
     
+    //MARK: Creating database
+    
+    /**
+     This function gets the database
+     
+     - Returns: The Realm database
+     */
     private func getDatabase() throws -> Realm {
         let configuration = Realm.Configuration(schemaVersion: UInt64(1.0),
                                                 migrationBlock: nil,
@@ -24,6 +31,13 @@ class DatabaseManager {
         return try Realm(configuration: configuration)
     }
     
+    //MARK: Reading database
+    
+    /**
+     This function gets all the objects saved on the database
+     
+     - Returns: An array with the objects saved on the database
+     */
     func getAllFavorites() -> [AlbumDetailedInfo] {
         if shouldUpdate {
             var convertedResultsArray = [AlbumDetailedInfo]()
@@ -46,6 +60,12 @@ class DatabaseManager {
         }
     }
     
+    /**
+     This function gets the saved images for each album in an input array
+     
+     - Parameter albums: The array with the names of each album that should have the image retrieved
+     - Parameter completion: The callback that is called after the operations are completed
+     */
     func getSavedImage(forAlbums albums: [String?], _ completion: @escaping ([String: UIImage]) -> Void) {
         var albumsDict = [String: UIImage]()
         let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
@@ -67,6 +87,14 @@ class DatabaseManager {
         completion(albumsDict)
     }
     
+    //MARK: Updating database
+    
+    /**
+     This function saves an album in the database
+     
+     - Parameter album: The album that should be added to the database
+     - Parameter completion: The callback that is called after the operations are completed
+     */
     func addToFavorites(album: AlbumDetailedInfo, image: UIImage, _ completion: @escaping (Swift.Result<Bool, Error>) -> Void) {
         let cacheModel = mapper.mapToRealmDetailedInfo(object: album)
         do {
@@ -78,7 +106,8 @@ class DatabaseManager {
             
             // Saving image to disk
             if let data = image.jpegData(compressionQuality: 1), let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL {
-                try data.write(to: directory.appendingPathComponent("\(album.name!).png")!) //Check this force cast
+                guard let directoryWithPath = directory.appendingPathComponent("\(album.name ?? "").png") else { return }
+                try data.write(to: directoryWithPath)
             }
             completion(.success(true))
         } catch let error as NSError {
@@ -87,8 +116,15 @@ class DatabaseManager {
         shouldUpdate = true
     }
     
+    //MARK: Deleting from database
+    
+    /**
+     This function removes an album from the database
+     
+     - Parameter album: The album that should be removed from the database
+     - Parameter completion: The callback that is called after the operations are completed
+     */
     func removeFromFavorites(album: AlbumDetailedInfo, _ completion: @escaping (Swift.Result<Bool, Error>) -> Void) {
-        // Missing: Actually handle all the errors, maybe add completion blocks
         let cacheModel = mapper.mapToRealmDetailedInfo(object: album)
         do {
             let realm = try getDatabase()

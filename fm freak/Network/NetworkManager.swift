@@ -17,18 +17,37 @@ class NetworkManager {
     
     // MARK: Requests
     
+    /**
+     This makes a requests to the network for an specific hip hop chart page
+     
+     - Parameter page: The page that should be requested
+     - Parameter completion: The callback that is called after the operations are completed
+     */
     func makeHipHopRequest(forPage page: Int, completion: @escaping (Swift.Result<AlbumsRequestInfo, HttpRequestError>) -> Void) {
         getRequestForUrl(pathBuilder.getHipHopURL(forPage: page)) { result in
             completion(result)
         }
     }
     
+    /**
+     This makes a requests to the network for an specific album
+     
+     - Parameter albumName: The album that should be requested
+     - Parameter artistName: The artist related to the album that should be requested
+     - Parameter completion: The callback that is called after the operations are completed
+     */
     func makeDetailedAlbumRequest(forAlbum albumName: String, artistName: String, completion: @escaping (Swift.Result<AlbumFullInfo, HttpRequestError>) -> Void) {
         getRequestForUrl(pathBuilder.getAlbumDetailURL(forAlbum: albumName, artistName: artistName)) { result in
             completion(result)
         }
     }
     
+    /**
+     This makes a requests to the network for an specific URL
+     
+     - Parameter requestUrl: The URL that should be requested
+     - Parameter completion: The callback that is called after the operations are completed
+     */
     private func getRequestForUrl<T>(_ requestUrl: String, _ completion: @escaping (Swift.Result<T, HttpRequestError>) -> Void) where T : Codable {
 
         Alamofire.request(requestUrl).responseJSON { response in
@@ -55,6 +74,12 @@ class NetworkManager {
         case decoding
     }
     
+    /**
+     This makes a requests to the network for an specific image
+     
+     - Parameter album: The album for which the image should be requested
+     - Parameter completion: The callback that is called after the operations are completed
+     */
     func requestImage(forAlbum album: Album, completion: @escaping (_ imageTuple: (String, UIImage)) -> Void) {
         if let addressToRequest = album.image?.last?.text {
             Alamofire.request(addressToRequest).responseImage { response in

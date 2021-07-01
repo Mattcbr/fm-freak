@@ -31,27 +31,45 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Creating the presenter
         if presenter == nil {
             presenter = AlbumDetailPresenter(networkManager: NetworkManager.sharedInstance,
                                              databaseManager: DatabaseManager.sharedInstance)
             presenter?.attachView(self)
         }
         
+        albumCoverImageView.image = albumCover
+        loadingIndicator.hidesWhenStopped = true
+        requestAlbumDetail()
+        checkAndShowLoadingIndicator()
+    }
+    
+    /**
+     This asks the presenter to request the album details
+     */
+    private func requestAlbumDetail() {
         if let albumNameUnwrapped = albumName, let artistNameUnwrapped = artistName, let presenterUnwrapped = presenter {
             presenterUnwrapped.requestDetails(forAlbum: albumNameUnwrapped, artistName: artistNameUnwrapped)
         }
-        
-        loadingIndicator.hidesWhenStopped = true
+    }
+    
+    /**
+     This checks if the loading indicator should be shown and shows it if is supposed to
+     */
+    private func checkAndShowLoadingIndicator() {
         if !isFavorite {
             loadingIndicator.startAnimating()
             view.bringSubviewToFront(loadingIndicator)
         }
-        
-        albumCoverImageView.image = albumCover
     }
     
     // MARK: UI Setup
     
+    /**
+     This shows the album information according to the parameters received
+     
+     - Parameter album: The album that should be shown in the view
+     */
     func showAlbumDetail(forAlbum album: AlbumDetailedInfo) {
         titleLabel.text = album.name
         artistLabel.text = album.artist
@@ -83,6 +101,9 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         albumCoverImageView.image = albumCover
     }
     
+    /**
+     This sets the favorites button text according to the database status of the album
+     */
     func setupFavoritesButton() {
         if let presenterUnwrapped = presenter, let albumNameUnwrapped = albumName {
             isFavorite = presenterUnwrapped.isAlbumFavorite(albumName: albumNameUnwrapped)
@@ -117,6 +138,9 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         }
     }
     
+    /**
+     This shows a confirmation dialog before removing an album from the favorites database
+     */
     private func showDeleteConfirmationDialog() {
         let alert = UIAlertController(title: "Are you sure?",
                                       message: "Do you really want to remove this album from your favorites?",
@@ -132,6 +156,11 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         self.present(alert, animated: true, completion: nil)
     }
     
+    /**
+     This shows a dialog to confirm that the album was added to the database
+     
+     - Parameter wasSuccessful: Confirms if the addition was successful or not
+     */
     func showAddToFavoriteCompleteDialog(wasSuccessful: Bool) {
         let title = wasSuccessful ? "Album saved" : "Error saving"
         let message = wasSuccessful ? "This album was added to your favorites" : "We're sorry, but there was an error when trying to add this album to your favorites"
@@ -148,6 +177,11 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         }
     }
     
+    /**
+     This shows a dialog to confirm that the album was removed from the database
+     
+     - Parameter wasSuccessful: Confirms if the addition was successful or not
+     */
     func showRemoveFromFavoriteCompleteDialog(wasSuccessful: Bool) {
         let title = wasSuccessful ? "Album removed" : "Error removing"
         let message = wasSuccessful ? "This album was removed from your favorites" : "We're sorry, but there was an error when trying to remove this album from your favorites"

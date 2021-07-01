@@ -55,6 +55,12 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     }
     
     // MARK: TopChartView Protocol Functions
+    
+    /**
+     This verifies if should add or substitute a new array of albums to the existing one, and does it
+     
+     - Parameter newAlbuns: The array containing new albuns
+     */
     func addNewAlbunsToArray(newAlbuns: [Album]) {
         if isFavoritesTab {
             albunsArray = newAlbuns
@@ -64,6 +70,11 @@ class TopChartViewController: UICollectionViewController, TopChartView {
         collectionView.reloadData()
     }
     
+    /**
+     This adds new images to the images dictionary
+     
+     - Parameter newImages: The dictionary with new images
+     */
     func addNewImagesToDictionary(newImages: [String : UIImage]) {
         newImages.forEach({ (key, value) in
             imagesDictionary[key] = value

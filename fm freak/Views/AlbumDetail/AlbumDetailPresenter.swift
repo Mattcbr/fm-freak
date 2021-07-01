@@ -44,11 +44,12 @@ class AlbumDetailPresenter<T: AlbumDetailView>: BasePresenter<T> {
     
     func getAlbumFromDatabase(albumName: String) {
         let allFavorites = databaseManager.getAllFavorites()
-        let selectedAlbum = allFavorites.first(where: {$0.name == albumName})
-        if let selectedAlbumUnwrapped = selectedAlbum {
-            self.baseView?.showAlbumDetail(forAlbum: selectedAlbumUnwrapped)
+        let albumFromDatabase = allFavorites.first(where: {$0.name?.lowercased() == albumName.lowercased()})
+        if let albumFromDatabaseUnwrapped = albumFromDatabase {
+            self.baseView?.showAlbumDetail(forAlbum: albumFromDatabaseUnwrapped)
+            selectedAlbum = albumFromDatabaseUnwrapped
         } else {
-//            self.baseView?.showError()
+            self.baseView?.showError(nil)
         }
     }
     
@@ -61,7 +62,7 @@ class AlbumDetailPresenter<T: AlbumDetailView>: BasePresenter<T> {
     
     func isAlbumFavorite(albumName: String) -> Bool {
         let favoritesArray = databaseManager.getAllFavorites()
-        return favoritesArray.contains(where: {$0.name == albumName})
+        return favoritesArray.contains(where: {$0.name?.lowercased() == albumName.lowercased()})
     }
     
     func didSelectFavoritesButton(withImage image: UIImage?) {

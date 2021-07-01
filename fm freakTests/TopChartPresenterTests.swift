@@ -78,7 +78,7 @@ private class MockTopChartView: TopChartView {
         addNewImagesToDictionaryCalled = true
     }
     
-    func showError(_ error: Error) {
+    func showError(_ error: Error?) {
         showErrorCalled = true
     }
 }

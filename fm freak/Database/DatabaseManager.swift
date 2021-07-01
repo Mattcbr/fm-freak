@@ -93,7 +93,7 @@ class DatabaseManager {
         do {
             let realm = try getDatabase()
             try realm.write {
-                realm.delete(realm.objects(RealmDetailedAlbum.self).filter({$0.name == cacheModel.name}))
+                realm.delete(realm.objects(RealmDetailedAlbum.self).filter({$0.name?.lowercased() == cacheModel.name?.lowercased()}))
             }
             completion(.success(true))
         } catch let error as NSError {

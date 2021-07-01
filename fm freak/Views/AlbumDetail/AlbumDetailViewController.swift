@@ -93,7 +93,7 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         favoritesButton.setTitle(buttonText, for: .normal)
     }
     
-    func showError(_ error: Error) {
+    func showError(_ error: Error?) {
         //TODO: Implement this
     }
     

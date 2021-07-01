@@ -86,7 +86,7 @@ private class MockAlbumDetailView: AlbumDetailView {
         showAlbumDetailCalled = true
     }
     
-    func showError(_ error: Error) {
+    func showError(_ error: Error?) {
         showErrorCalled = true
     }
     

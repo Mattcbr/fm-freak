@@ -71,7 +71,7 @@ class TopChartViewController: UICollectionViewController, TopChartView {
         collectionView.reloadData()
     }
     
-    func showError(_ error: Error) {
+    func showError(_ error: Error?) {
         //TODO: Implement This
     }
     

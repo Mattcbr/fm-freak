@@ -50,6 +50,8 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
                                 }
                             }
                         }
+                    } else {
+                        self?.baseView?.showError(nil)
                     }
                 case .failure(let error):
                     self?.baseView?.showError(error)

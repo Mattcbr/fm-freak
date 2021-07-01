@@ -72,7 +72,14 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     }
     
     func showError(_ error: Error?) {
-        //TODO: Implement This
+        let alert = UIAlertController (title: "Error",
+                                       message: "There was an error requesting more albums",
+                                       preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: Collection view

@@ -94,7 +94,17 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
     }
     
     func showError(_ error: Error?) {
-        //TODO: Implement this
+        let alert = UIAlertController (title: "Error",
+                                       message: "There was an error requesting details for the selected album",
+                                       preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: Favorites

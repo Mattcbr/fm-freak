@@ -31,7 +31,7 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         }
     }
     
-    func requestAlbunsFromNetwork() {
+    private func requestAlbunsFromNetwork() {
         if !isLoadingData {
             isLoadingData = true
             networkManager.makeHipHopRequest(forPage: lastRequestedPage) { [weak self] result in
@@ -59,7 +59,7 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
         }
     }
     
-    func requestAlbumsFromDatabase() {
+    private func requestAlbumsFromDatabase() {
         let detailedAlbumsArray = databaseManager.getAllFavorites()
         var albumsArray = [Album]()
         

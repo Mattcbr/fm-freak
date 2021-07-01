@@ -24,6 +24,7 @@ class AlbumDetailPresenterTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        presenter?.detachView()
         presenter = nil
         networkManager = nil
     }

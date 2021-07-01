@@ -23,6 +23,7 @@ class TopChartPresenterTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        presenter?.detachView()
         presenter = nil
         networkManager = nil
     }
@@ -32,7 +33,7 @@ class TopChartPresenterTests: XCTestCase {
         networkManager?.expectedResult = Result<Any, NetworkManager.HttpRequestError>.success((Any).self)
         
         //When
-        presenter?.requestAlbunsFromNetwork()
+        presenter?.getAlbums()
         
         //Then
         XCTAssertTrue(view.addNewAlbunsToArrayCalled)
@@ -44,7 +45,7 @@ class TopChartPresenterTests: XCTestCase {
         networkManager?.expectedResult = Result<Any, NetworkManager.HttpRequestError>.failure(.decoding)
         
         //When
-        presenter?.requestAlbunsFromNetwork()
+        presenter?.getAlbums()
         
         //Then
         XCTAssertTrue(view.showErrorCalled)
@@ -56,6 +57,19 @@ class TopChartPresenterTests: XCTestCase {
         
         //When
         presenter?.requestMoreAlbums()
+        
+        //Then
+        XCTAssertTrue(view.addNewAlbunsToArrayCalled)
+        XCTAssertTrue(view.addNewImagesToDictionaryCalled)
+    }
+    
+    func testGetAlbumsFromDatabase() {
+        //Given
+        presenter = TopChartPresenter(networkManager: networkManager!, databaseManager: databaseManager, isFavoritesScreen: true)
+        presenter?.attachView(view)
+        
+        //When
+        presenter?.getAlbums()
         
         //Then
         XCTAssertTrue(view.addNewAlbunsToArrayCalled)

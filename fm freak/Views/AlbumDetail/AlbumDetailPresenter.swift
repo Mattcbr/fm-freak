@@ -19,7 +19,17 @@ class AlbumDetailPresenter<T: AlbumDetailView>: BasePresenter<T> {
     }
     
     func requestDetails(forAlbum albumName: String, artistName: String) {
-        networkManager.makeDetailedAlbumRequest(forAlbum: albumName, artistName: artistName) { [weak self] result in
+        if isAlbumFavorite(albumName: albumName) {
+            getAlbumFromDatabase(albumName: albumName)
+        } else {
+            getAlbumFromNetwork(albumName: albumName, artistName: artistName)
+        }
+    }
+    
+    func getAlbumFromNetwork(albumName: String, artistName: String) {
+        let sanitizedAlbumName = sanitizeStringBeforeRequest(stringToSanitize: albumName)
+        let sanitizedArtistName = sanitizeStringBeforeRequest(stringToSanitize: artistName)
+        networkManager.makeDetailedAlbumRequest(forAlbum: sanitizedAlbumName, artistName: sanitizedArtistName) { [weak self] result in
             switch result {
             case .success(let albumDetail):
                 if let detailedInfo = albumDetail.album {
@@ -32,6 +42,16 @@ class AlbumDetailPresenter<T: AlbumDetailView>: BasePresenter<T> {
         }
     }
     
+    func getAlbumFromDatabase(albumName: String) {
+        let allFavorites = databaseManager.getAllFavorites()
+        let selectedAlbum = allFavorites.first(where: {$0.name == albumName})
+        if let selectedAlbumUnwrapped = selectedAlbum {
+            self.baseView?.showAlbumDetail(forAlbum: selectedAlbumUnwrapped)
+        } else {
+//            self.baseView?.showError()
+        }
+    }
+    
     func sanitizeStringBeforeRequest(stringToSanitize: String) -> String {
         let sanitizedString = stringToSanitize.replacingOccurrences(of: " ", with: "%20")
         return sanitizedString
@@ -39,14 +59,14 @@ class AlbumDetailPresenter<T: AlbumDetailView>: BasePresenter<T> {
     
     // MARK: Database Management
     
-    func isAlbumFavorite() -> Bool {
+    func isAlbumFavorite(albumName: String) -> Bool {
         let favoritesArray = databaseManager.getAllFavorites()
-        return favoritesArray.contains(where: {$0.name == selectedAlbum?.name})
+        return favoritesArray.contains(where: {$0.name == albumName})
     }
     
     func didSelectFavoritesButton(withImage image: UIImage?) {
         if let selectedAlbumUnwrapped = selectedAlbum {
-            if isAlbumFavorite() {
+            if isAlbumFavorite(albumName: selectedAlbum?.name ?? "") {
                 removeAlbumFromFavorites(albumToRemove: selectedAlbumUnwrapped)
             } else {
                 addAlbumToFavorites(albumToAdd: selectedAlbumUnwrapped, albumImage: image ?? UIImage())

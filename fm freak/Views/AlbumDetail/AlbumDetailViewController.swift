@@ -38,14 +38,14 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
         }
         
         if let albumNameUnwrapped = albumName, let artistNameUnwrapped = artistName, let presenterUnwrapped = presenter {
-            let sanitizedAlbumName = presenterUnwrapped.sanitizeStringBeforeRequest(stringToSanitize: albumNameUnwrapped)
-            let sanitizedArtistName = presenterUnwrapped.sanitizeStringBeforeRequest(stringToSanitize: artistNameUnwrapped)
-            presenterUnwrapped.requestDetails(forAlbum: sanitizedAlbumName, artistName: sanitizedArtistName)
+            presenterUnwrapped.requestDetails(forAlbum: albumNameUnwrapped, artistName: artistNameUnwrapped)
         }
         
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.startAnimating()
-        view.bringSubviewToFront(loadingIndicator)
+        if !isFavorite {
+            loadingIndicator.startAnimating()
+            view.bringSubviewToFront(loadingIndicator)
+        }
         
         albumCoverImageView.image = albumCover
     }
@@ -84,7 +84,9 @@ class AlbumDetailViewController: UIViewController, AlbumDetailView {
     }
     
     func setupFavoritesButton() {
-        let isFavorite = presenter!.isAlbumFavorite()
+        if let presenterUnwrapped = presenter, let albumNameUnwrapped = albumName {
+            isFavorite = presenterUnwrapped.isAlbumFavorite(albumName: albumNameUnwrapped)
+        }
         let buttonText = isFavorite ? "Remove from favorites" : "Add to favorites"
         
         favoritesButton.titleLabel?.textAlignment = .center

@@ -5,7 +5,7 @@
 //  Created by Matheus Queiroz on 6/30/21.
 //
 
-import Foundation
+import UIKit
 import RealmSwift
 
 class DatabaseManager {

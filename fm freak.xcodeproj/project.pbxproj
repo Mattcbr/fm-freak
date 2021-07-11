@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		2F596EA3268B2F9500C99D1D /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F596EA2268B2F9500C99D1D /* PathBuilder.swift */; };
 		2F596EBE268B459B00C99D1D /* TopChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F596EBD268B459B00C99D1D /* TopChartCollectionViewCell.swift */; };
 		2F596EC3268B460B00C99D1D /* TopChartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F596EC2268B460B00C99D1D /* TopChartCollectionViewCell.xib */; };
+		2F7BB2E0269B351600D9E9AA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F7BB2DF269B351600D9E9AA /* RealmSwift */; };
+		2F7BB2E2269B351600D9E9AA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2F7BB2E1269B351600D9E9AA /* Realm */; };
+		2F7BB2E7269B35A200D9E9AA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2F7BB2E6269B35A200D9E9AA /* Alamofire */; };
+		2F7BB2EC269B35E400D9E9AA /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2F7BB2EB269B35E400D9E9AA /* AlamofireImage */; };
 		2F7F485E268B1355007E39E8 /* TopChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F485D268B1355007E39E8 /* TopChartView.swift */; };
 		2F7F4863268B1373007E39E8 /* TopChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F4862268B1373007E39E8 /* TopChartViewController.swift */; };
 		2F7F4877268B1BDE007E39E8 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F4876268B1BDE007E39E8 /* Album.swift */; };
@@ -42,7 +46,6 @@
 		2FBB036C268C6F7C00C5C8B4 /* TracksArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB036B268C6F7C00C5C8B4 /* TracksArray.swift */; };
 		2FBB0371268C6F8800C5C8B4 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB0370268C6F8800C5C8B4 /* Track.swift */; };
 		2FBB0376268C6FA500C5C8B4 /* Wiki.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB0375268C6FA500C5C8B4 /* Wiki.swift */; };
-		5F4674C54B94F6D646A7F789 /* Pods_fm_freak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A07031307A17DF42CE414D /* Pods_fm_freak.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14A07031307A17DF42CE414D /* Pods_fm_freak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fm_freak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1FA63C268DCBA3003963DB /* MockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseManager.swift; sourceTree = "<group>"; };
 		2F235C7E268CB96800DD4671 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		2F235C83268CC1FE00DD4671 /* RealmDetailedAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDetailedAlbum.swift; sourceTree = "<group>"; };
@@ -96,8 +98,6 @@
 		2FBB036B268C6F7C00C5C8B4 /* TracksArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksArray.swift; sourceTree = "<group>"; };
 		2FBB0370268C6F8800C5C8B4 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		2FBB0375268C6FA500C5C8B4 /* Wiki.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wiki.swift; sourceTree = "<group>"; };
-		5F381030FD6D9B2AE9B7C8BE /* Pods-fm freak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fm freak.release.xcconfig"; path = "Target Support Files/Pods-fm freak/Pods-fm freak.release.xcconfig"; sourceTree = "<group>"; };
-		62026E2E62491673FA8F1D83 /* Pods-fm freak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fm freak.debug.xcconfig"; path = "Target Support Files/Pods-fm freak/Pods-fm freak.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F4674C54B94F6D646A7F789 /* Pods_fm_freak.framework in Frameworks */,
+				2F7BB2E7269B35A200D9E9AA /* Alamofire in Frameworks */,
+				2F7BB2EC269B35E400D9E9AA /* AlamofireImage in Frameworks */,
+				2F7BB2E2269B351600D9E9AA /* Realm in Frameworks */,
+				2F7BB2E0269B351600D9E9AA /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,8 +212,6 @@
 				2FABD4CA268A5EBA0075B70C /* fm freak */,
 				2FABD4E1268A5EBE0075B70C /* fm freakTests */,
 				2FABD4C9268A5EBA0075B70C /* Products */,
-				EFF297C0DADFB6C365A71F56 /* Pods */,
-				5F1F26821535180FC26D328C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,23 +295,6 @@
 			path = AlbumDetailInfo;
 			sourceTree = "<group>";
 		};
-		5F1F26821535180FC26D328C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				14A07031307A17DF42CE414D /* Pods_fm_freak.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EFF297C0DADFB6C365A71F56 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				62026E2E62491673FA8F1D83 /* Pods-fm freak.debug.xcconfig */,
-				5F381030FD6D9B2AE9B7C8BE /* Pods-fm freak.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -318,17 +302,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FABD4F2268A5EBE0075B70C /* Build configuration list for PBXNativeTarget "fm freak" */;
 			buildPhases = (
-				934CAB292B8B2A24045BCB24 /* [CP] Check Pods Manifest.lock */,
 				2FABD4C4268A5EBA0075B70C /* Sources */,
 				2FABD4C5268A5EBA0075B70C /* Frameworks */,
 				2FABD4C6268A5EBA0075B70C /* Resources */,
-				E9D0F7873A0987A355684FF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "fm freak";
+			packageProductDependencies = (
+				2F7BB2DF269B351600D9E9AA /* RealmSwift */,
+				2F7BB2E1269B351600D9E9AA /* Realm */,
+				2F7BB2E6269B35A200D9E9AA /* Alamofire */,
+				2F7BB2EB269B35E400D9E9AA /* AlamofireImage */,
+			);
 			productName = "fm freak";
 			productReference = 2FABD4C8268A5EBA0075B70C /* fm freak.app */;
 			productType = "com.apple.product-type.application";
@@ -378,6 +366,11 @@
 				Base,
 			);
 			mainGroup = 2FABD4BF268A5EBA0075B70C;
+			packageReferences = (
+				2F7BB2DE269B351600D9E9AA /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				2F7BB2E5269B35A200D9E9AA /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2F7BB2EA269B35E400D9E9AA /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = 2FABD4C9268A5EBA0075B70C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -408,48 +401,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		934CAB292B8B2A24045BCB24 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fm freak-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E9D0F7873A0987A355684FF6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-fm freak/Pods-fm freak-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-fm freak/Pods-fm freak-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fm freak/Pods-fm freak-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2FABD4C4268A5EBA0075B70C /* Sources */ = {
@@ -645,7 +596,6 @@
 		};
 		2FABD4F3268A5EBE0075B70C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62026E2E62491673FA8F1D83 /* Pods-fm freak.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -665,7 +615,6 @@
 		};
 		2FABD4F4268A5EBE0075B70C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F381030FD6D9B2AE9B7C8BE /* Pods-fm freak.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -758,6 +707,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F7BB2DE269B351600D9E9AA /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.10.0;
+			};
+		};
+		2F7BB2E5269B35A200D9E9AA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		2F7BB2EA269B35E400D9E9AA /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F7BB2DF269B351600D9E9AA /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F7BB2DE269B351600D9E9AA /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		2F7BB2E1269B351600D9E9AA /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F7BB2DE269B351600D9E9AA /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		2F7BB2E6269B35A200D9E9AA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F7BB2E5269B35A200D9E9AA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2F7BB2EB269B35E400D9E9AA /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F7BB2EA269B35E400D9E9AA /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2FABD4C0268A5EBA0075B70C /* Project object */;
 }

@@ -5,7 +5,7 @@
 //  Created by Matheus Queiroz on 6/29/21.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 import AlamofireImage
 
@@ -50,7 +50,7 @@ class NetworkManager {
      */
     private func getRequestForUrl<T>(_ requestUrl: String, _ completion: @escaping (Swift.Result<T, HttpRequestError>) -> Void) where T : Codable {
 
-        Alamofire.request(requestUrl).responseJSON { response in
+        Alamofire.AF.request(requestUrl).responseJSON { response in
             switch response.result {
             case .success:
                 guard let data = response.data else {return}
@@ -82,9 +82,13 @@ class NetworkManager {
      */
     func requestImage(forAlbum album: Album, completion: @escaping (_ imageTuple: (String, UIImage)) -> Void) {
         if let addressToRequest = album.image?.last?.text {
-            Alamofire.request(addressToRequest).responseImage { response in
-                if let image = response.result.value, let albumName = album.name {
-                    completion((albumName, image))
+            Alamofire.AF.request(addressToRequest).responseImage { response in
+                switch response.result {
+                case .success(let image):
+                    completion((album.name!, image))
+                case .failure(let error):
+                    //handle error
+                    print("Error")
                 }
             }
         }

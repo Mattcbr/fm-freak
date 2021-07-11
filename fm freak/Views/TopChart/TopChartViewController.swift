@@ -110,9 +110,7 @@ class TopChartViewController: UICollectionViewController, TopChartView {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? TopChartCollectionViewCell else {
-            fatalError("Not a Top Chart cell")
-        }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? TopChartCollectionViewCell else { return UICollectionViewCell() }
         if albunsArray.count > indexPath.row {
             let albumToSetup = albunsArray[indexPath.row]
             cell.setupCell(forAlbum: albumToSetup)

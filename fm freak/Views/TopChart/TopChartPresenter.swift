@@ -40,34 +40,36 @@ class TopChartPresenter<T: TopChartView>: BasePresenter<T> {
     /**
      This requests albums to the network
      */
+    // Improve Single responsibility
     private func requestAlbunsFromNetwork() {
-        if !isLoadingData {
-            isLoadingData = true
-            networkManager.makeHipHopRequest(forPage: lastRequestedPage) { [weak self] result in
-                switch result {
-                case .success(let albunsArray):
-                    if let albumsOnly = albunsArray.albums?.album {
-                        self?.baseView?.addNewAlbunsToArray(newAlbuns: albumsOnly)
-                        self?.isLoadingData = false
-                        var imagesDictionary = [String: UIImage]()
-                        for (index, album) in albumsOnly.enumerated() {
-                            self?.requestImagesFromNetwork(forAlbum: album) { imageTuple in
-                                imagesDictionary[imageTuple.0] = imageTuple.1
-                                
-                                if index == albumsOnly.count - 1 {
-                                    self?.baseView?.addNewImagesToDictionary(newImages: imagesDictionary)
-                                }
+        guard !isLoadingData else {return}
+        
+        isLoadingData = true
+        networkManager.makeHipHopRequest(forPage: lastRequestedPage) { [weak self] result in
+            switch result {
+            case .success(let albunsArray):
+                if let albumsOnly = albunsArray.albums?.album {
+                    self?.baseView?.addNewAlbunsToArray(newAlbuns: albumsOnly)
+                    self?.isLoadingData = false
+                    var imagesDictionary = [String: UIImage]()
+                    for (index, album) in albumsOnly.enumerated() {
+                        self?.requestImagesFromNetwork(forAlbum: album) { imageTuple in
+                            imagesDictionary[imageTuple.0] = imageTuple.1
+                            
+                            if index == albumsOnly.count - 1 {
+                                self?.baseView?.addNewImagesToDictionary(newImages: imagesDictionary)
                             }
                         }
-                    } else {
-                        self?.baseView?.showError(nil)
                     }
-                case .failure(let error):
-                    self?.baseView?.showError(error)
-                    self?.isLoadingData = false
+                } else {
+                    self?.baseView?.showError(nil)
                 }
+            case .failure(let error):
+                self?.baseView?.showError(error)
+                self?.isLoadingData = false
             }
         }
+        
     }
     
     /**
